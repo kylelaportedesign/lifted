@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#F2F0E8;color:#0A0A0A;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#F2F0E8;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:64px 20px 100px;overflow:hidden}
+    .display{font-family:'Archivo','Manrope',system-ui,sans-serif;font-weight:800;letter-spacing:-0.02em;line-height:0.92}
+    .display-md{font-family:'Archivo','Manrope',system-ui,sans-serif;font-weight:800;letter-spacing:-0.02em;line-height:0.95}
+    .label{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#0A0A0A}
+    .label-muted{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#7A7A70}
+    .meta{font-weight:500;font-size:13px;color:#7A7A70;letter-spacing:-0.005em}
+    .tabular{font-variant-numeric:tabular-nums}
+    .card{background:#FAF9F2;border-radius:16px;padding:16px;border:0.5px solid rgba(10,10,10,0.04)}
+    .hero-yellow{background:#F5F500;border-radius:20px;padding:18px 22px 16px;color:#0A0A0A;position:relative;overflow:hidden}
+    .hero-sand{background:#A39E85;border-radius:20px;padding:22px 22px 24px;color:#0A0A0A}
+    .hero-ink{background:#0A0A0A;border-radius:20px;padding:22px 22px 24px;color:#F2F0E8}
+    .card-mist{background:#E8E6DF;border-radius:16px;padding:16px}
+    .row{display:flex;align-items:center;gap:10px}
+    .between{justify-content:space-between}
+    .col{display:flex;flex-direction:column}
+    .rail{display:flex;align-items:center;gap:6px;width:100%}
+    .rail-step{flex:1;height:3px;border-radius:2px;background:#B5B4B0}
+    .rail-step.done{background:#F5F500}
+    .rail-step.now{background:#0A0A0A}
+    .avatar{width:28px;height:28px;border-radius:50%;background:#E8E6DF;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:700;font-size:11px;color:#0A0A0A;flex-shrink:0}
+    .avatar.md{width:40px;height:40px;font-size:14px}
+    .tabbar{position:absolute;bottom:0;left:0;right:0;height:88px;background:rgba(242,240,232,0.86);backdrop-filter:blur(20px) saturate(160%);border-top:0.5px solid rgba(10,10,10,0.06);display:flex;justify-content:space-around;align-items:flex-start;padding:14px 12px 0}
+    .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;font-weight:600;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:#7A7A70}
+    .tab.active{color:#0A0A0A}
+    .tab-dot{width:4px;height:4px;border-radius:50%;background:transparent;margin-top:2px}
+    .tab.active .tab-dot{background:#0A0A0A}
+    .dot{display:inline-block;width:6px;height:6px;border-radius:50%;vertical-align:middle;margin-right:6px}
+    .dot.warning{background:#FF9500}
+    .dot.info{background:#4A6CF7}
+    .dot.ink{background:#0A0A0A}
+    .chip{display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:999px;font-weight:600;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap}
+    .chip-warning{background:#FFE4C2;color:#7A4A12}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <!-- Header -->
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+      <div class="label-muted">Friday · April 24</div>
+      <div style="width:36px;height:36px;border-radius:50%;border:1.5px solid #0A0A0A;background:#E8E6DF;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:700;font-size:13px">AW</div>
+    </div>
+    <div class="display" style="font-size:24px;white-space:nowrap;letter-spacing:-0.03em">Good morning, Adriana.</div>
+    <div class="meta" style="margin-top:14px;max-width:280px">Four projects in motion, two contracts moving, three documents to clear.</div>
+
+    <!-- Projects section header -->
+    <div class="row between" style="margin-top:20px;padding:0 2px 18px;align-items:center;gap:12px">
+      <div>
+        <span class="label-muted">Active projects</span>
+        <div class="display-md" style="font-size:26px;letter-spacing:-0.025em;margin-top:4px;line-height:1">4 in flight.</div>
+      </div>
+      <button style="background:#0A0A0A;color:#F2F0E8;border:0;border-radius:999px;padding:10px 14px;font-size:11px;letter-spacing:0.04em;font-weight:600;text-transform:uppercase;white-space:nowrap">+ New project</button>
+    </div>
+
+    <!-- Yellow budget hero -->
+    <div class="hero-yellow" style="margin-bottom:12px">
+      <div class="row between" style="align-items:flex-end">
+        <div>
+          <div class="label">Combined budget</div>
+          <div class="display tabular" style="font-size:38px;letter-spacing:-0.035em;line-height:0.9;margin-top:6px">$94,580<span style="font-size:16px;font-weight:500;color:rgba(10,10,10,0.55);margin-left:6px">spent</span></div>
+        </div>
+        <div style="text-align:right">
+          <div class="label-muted" style="color:rgba(10,10,10,0.55)">of $157,500</div>
+          <div class="meta tabular" style="color:#0A0A0A;font-weight:600;margin-top:4">60% used</div>
+        </div>
+      </div>
+      <div style="margin-top:14px;height:8px;background:rgba(10,10,10,0.12);border-radius:999px;overflow:hidden">
+        <div style="width:60%;height:100%;background:#0A0A0A;border-radius:999px"></div>
+      </div>
+    </div>
+
+    <!-- Project card -->
+    <div class="card">
+      <div class="row between" style="align-items:flex-start">
+        <div style="flex:1">
+          <div class="label-muted" style="margin-bottom:4px">Atlas Health</div>
+          <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.02em;line-height:1.1">Atlas iOS rebuild</div>
+        </div>
+        <div style="padding:6px 10px;border-radius:999px;background:#E8E6DF;margin-left:12px">
+          <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;line-height:1">8d</div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:14px;gap:18px">
+        <div style="flex:1">
+          <div class="label-muted" style="font-size:9px">Current</div>
+          <div class="tabular" style="font-family:'Archivo',sans-serif;font-weight:700;font-size:20px;margin-top:2px;letter-spacing:-0.02em">$48,200</div>
+        </div>
+        <div style="flex:1">
+          <div class="label-muted" style="font-size:9px">Estimated</div>
+          <div class="tabular" style="font-family:'Archivo',sans-serif;font-weight:600;font-size:20px;color:#7A7A70;margin-top:2px;letter-spacing:-0.02em">$86,000</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;height:4px;background:#E8E6DF;border-radius:999px;overflow:hidden">
+        <div style="width:56%;height:100%;background:#0A0A0A;border-radius:999px"></div>
+      </div>
+      <div class="row between" style="margin-top:14px;align-items:center">
+        <div style="display:flex">
+          <div style="border:2px solid #FAF9F2;border-radius:50%"><div class="avatar" style="background:#A39E85">PI</div></div>
+          <div style="margin-left:-8px;border:2px solid #FAF9F2;border-radius:50%"><div class="avatar" style="background:#B5B4B0">KV</div></div>
+          <div style="margin-left:-8px;border:2px solid #FAF9F2;border-radius:50%"><div class="avatar" style="background:#A39E85">MC</div></div>
+        </div>
+        <div style="text-align:right;flex:1;margin-left:12px">
+          <div class="label-muted" style="font-size:9px">Next · May 2</div>
+          <div class="meta" style="color:#0A0A0A;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Beta candidate · build 0.9</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab bar -->
+  <div class="tabbar">
+    <div class="tab active"><div style="width:22px;height:22px"><svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="3.2" fill="currentColor"/><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div><span>Today</span><span class="tab-dot"></span></div>
+    <div class="tab"><div style="width:22px;height:22px"><svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="8" r="3.5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M3 19c1.4-3.6 5-5 8-5s6.6 1.4 8 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div><span>Contractors</span><span class="tab-dot"></span></div>
+    <div class="tab"><div style="width:22px;height:22px"><svg width="22" height="22" viewBox="0 0 22 22"><rect x="3" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="11" cy="12" r="2.4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div><span>Pay</span><span class="tab-dot"></span></div>
+    <div class="tab"><div style="width:22px;height:22px"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M5 3h9l4 4v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/><path d="M14 3v4h4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></div><span>Contracts</span><span class="tab-dot"></span></div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

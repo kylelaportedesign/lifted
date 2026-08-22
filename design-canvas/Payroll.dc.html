@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#F2F0E8;color:#0A0A0A;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#F2F0E8;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:64px 20px 220px;overflow:hidden}
+    .display{font-family:'Archivo','Manrope',system-ui,sans-serif;font-weight:800;letter-spacing:-0.02em;line-height:0.92}
+    .label{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#0A0A0A}
+    .label-muted{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#7A7A70}
+    .meta{font-weight:500;font-size:13px;color:#7A7A70;letter-spacing:-0.005em}
+    .tabular{font-variant-numeric:tabular-nums}
+    .card{background:#FAF9F2;border-radius:16px;padding:14px;border:0.5px solid rgba(10,10,10,0.04)}
+    .hero-yellow{background:#F5F500;border-radius:20px;padding:22px 22px 24px;color:#0A0A0A}
+    .row{display:flex;align-items:center;gap:10px}
+    .between{justify-content:space-between}
+    .avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;flex-shrink:0}
+    .back{border:0;background:rgba(10,10,10,0.05);border-radius:18px;padding:8px 12px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <button class="back" style="margin-bottom:16px">
+      <svg width="12" height="14" viewBox="0 0 8 14"><path d="M7 1L1 7l6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Today
+    </button>
+
+    <div class="hero-yellow">
+      <div class="row between">
+        <span class="label">Next run</span>
+        <span class="label">12 contractors</span>
+      </div>
+      <div class="display" style="font-size:48px;margin-top:14px;letter-spacing:-0.04em;line-height:0.85;display:flex;align-items:baseline;flex-wrap:nowrap">
+        <span>$</span><span class="tabular">38,420</span>
+        <span style="font-size:20px;font-weight:600;color:rgba(10,10,10,0.5);margin-left:4px">.00</span>
+      </div>
+      <div class="row between" style="margin-top:10px">
+        <span class="meta" style="color:rgba(10,10,10,0.7)">in 2d · 14h · 32m · across 8 countries</span>
+        <span class="label" style="font-size:9px">No hidden margin</span>
+      </div>
+    </div>
+
+    <div class="row between" style="padding:24px 4px 10px;align-items:center">
+      <span class="label-muted">Line items</span>
+      <span class="tabular" style="display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:22px;padding:0 8px;border-radius:11px;background:#0A0A0A;color:#F2F0E8;font-size:11px;font-weight:700">9</span>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="card">
+        <div class="row">
+          <div class="avatar" style="background:#A39E85;color:#0A0A0A">MC</div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:4px">
+            <div class="meta">to Maya Chen</div>
+            <div style="font-weight:700;font-size:16px;letter-spacing:-0.01em">$4,650.00</div>
+            <div class="meta">93,560 MXN · Local rail · SPEI</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="row">
+          <div class="avatar" style="background:#7A7A70;color:#0A0A0A">CR</div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:4px">
+            <div class="meta">to Carlos Reyes</div>
+            <div style="font-weight:700;font-size:16px;letter-spacing:-0.01em">$6,800.00</div>
+            <div class="meta">6.92M ARS · SWIFT</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="row">
+          <div class="avatar" style="background:#A39E85;color:#0A0A0A">PI</div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:4px">
+            <div class="meta">to Priya Iyer</div>
+            <div style="font-weight:700;font-size:16px;letter-spacing:-0.01em">$5,400.00</div>
+            <div class="meta">4.51L INR · Local rail · IMPS</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="row">
+          <div class="avatar" style="background:#4A5547;color:#E8E4DA">NM</div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:4px">
+            <div class="meta">to Nathaniel Mills</div>
+            <div style="font-weight:700;font-size:16px;letter-spacing:-0.01em">$3,120.00</div>
+            <div class="meta">2,890 EUR · SEPA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:absolute;left:0;right:0;bottom:0;padding:14px 20px 24px;background:linear-gradient(180deg, rgba(242,240,232,0) 0%, #F2F0E8 32%);display:flex;gap:10px">
+    <button style="flex:1;height:56px;border-radius:28px;border:1px solid rgba(10,10,10,0.12);background:transparent;color:#0A0A0A;font-weight:700;font-size:14px;letter-spacing:0.04em;text-transform:uppercase">Schedule</button>
+    <button style="flex:1.4;height:56px;border-radius:28px;border:0;background:#0A0A0A;color:#F2F0E8;font-weight:700;font-size:14px;letter-spacing:0.04em;text-transform:uppercase">Run now</button>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

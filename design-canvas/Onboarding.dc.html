@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#F2F0E8;color:#0A0A0A;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#F2F0E8;overflow:hidden;display:flex;flex-direction:column;padding:64px 20px 24px}
+    .display{font-family:'Archivo','Manrope',system-ui,sans-serif;font-weight:800;letter-spacing:-0.035em;line-height:0.95;font-size:56px}
+    .meta{font-weight:500;font-size:13px;color:#7A7A70;letter-spacing:-0.005em}
+    .back{border:0;background:rgba(10,10,10,0.05);border-radius:18px;padding:8px 12px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;align-self:flex-start}
+  </style>
+</helmet>
+<div class="screen">
+  <button class="back" style="margin-bottom:16px">
+    <svg width="12" height="14" viewBox="0 0 8 14"><path d="M7 1L1 7l6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Today
+  </button>
+
+  <div style="height:2px;background:#E8E6DF;margin-bottom:24px;position:relative">
+    <div style="position:absolute;left:0;top:0;height:100%;width:20%;background:#F5F500"></div>
+  </div>
+
+  <div style="flex:1;display:flex;flex-direction:column;justify-content:center">
+    <div class="display">Work with<br>anyone,<br>anywhere,<br>compliantly.</div>
+    <div class="meta" style="margin-top:24px;max-width:280px">Hire and pay independent contractors in 150+ countries. From your phone.</div>
+  </div>
+
+  <button style="width:100%;height:60px;border-radius:30px;border:0;background:#0A0A0A;color:#F2F0E8;font-weight:700;font-size:15px;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:24px">Get started</button>
+</div>
+</x-dc>
+</body>
+</html>

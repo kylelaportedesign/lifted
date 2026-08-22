@@ -6,3 +6,6 @@ dist
 .env.*
 !.env.example
 .vite
+
+# Seeded design-canvas output (regenerable from .dc.html sources)
+design-canvas/lifted-app-flows.html

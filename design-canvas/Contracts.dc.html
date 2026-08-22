@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#F2F0E8;color:#0A0A0A;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#F2F0E8;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:64px 20px 100px;overflow:hidden}
+    .display{font-family:'Archivo','Manrope',system-ui,sans-serif;font-weight:800;letter-spacing:-0.02em;line-height:0.92}
+    .label{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#0A0A0A}
+    .label-muted{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#7A7A70}
+    .meta{font-weight:500;font-size:13px;color:#7A7A70;letter-spacing:-0.005em}
+    .tabular{font-variant-numeric:tabular-nums}
+    .card{background:#FAF9F2;border-radius:16px;padding:16px;border:0.5px solid rgba(10,10,10,0.04)}
+    .hero-yellow{background:#F5F500;border-radius:20px;padding:22px 22px 24px;color:#0A0A0A}
+    .row{display:flex;align-items:center;gap:10px}
+    .between{justify-content:space-between}
+    .rail{display:flex;align-items:center;gap:6px;width:100%}
+    .rail-step{flex:1;height:3px;border-radius:2px;background:#B5B4B0}
+    .rail-step.done{background:#F5F500}
+    .rail-step.now{background:#0A0A0A}
+    .avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:700;font-size:11px;flex-shrink:0}
+    .back{border:0;background:rgba(10,10,10,0.05);border-radius:18px;padding:8px 12px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
+    .chip{display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:999px;font-weight:600;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap}
+    .chip .cd{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:0.85}
+    .chip-success{background:#D7F0E2;color:#0E5A37}
+    .chip-warning{background:#FFE4C2;color:#7A4A12}
+    .chip-info{background:#DCE3FB;color:#1F3380}
+    .chip-ink{background:#0A0A0A;color:#F2F0E8}
+    .timetabs{display:flex;gap:18px;padding:14px 0 6px}
+    .timetab{background:none;border:0;padding:6px 0;display:flex;align-items:baseline;gap:6px;color:#7A7A70;font-weight:500;font-size:15px}
+    .timetab.active{color:#0A0A0A;font-weight:700;border-bottom:2px solid #0A0A0A}
+    .timetab .ct{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:18px;padding:0 6px;border-radius:9px;background:#E8E6DF;color:#7A7A70;font-size:11px;font-weight:700}
+    .timetab.active .ct{background:#0A0A0A;color:#F2F0E8}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <button class="back" style="margin-bottom:16px">
+      <svg width="12" height="14" viewBox="0 0 8 14"><path d="M7 1L1 7l6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Today
+    </button>
+
+    <div class="display" style="font-size:56px;letter-spacing:-0.035em;line-height:0.92">Contracts.</div>
+
+    <div class="timetabs">
+      <div class="timetab active"><span>Active</span><span class="ct">12</span></div>
+      <div class="timetab"><span>Draft</span><span class="ct">3</span></div>
+      <div class="timetab"><span>Archive</span><span class="ct">47</span></div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero-yellow" style="margin-top:6px">
+      <span class="label">Awaiting signature</span>
+      <div style="display:flex;align-items:baseline;gap:12px;margin-top:14px">
+        <span class="display tabular" style="font-size:80px;letter-spacing:-0.04em;line-height:0.85">02</span>
+        <span class="label">days</span>
+        <span class="display tabular" style="font-size:56px;letter-spacing:-0.03em;line-height:0.85">04</span>
+        <span class="label">hrs</span>
+      </div>
+      <div class="meta" style="color:rgba(10,10,10,0.7);margin-top:10px">to Maya Chen · MX Independent Services</div>
+      <div class="rail" style="margin-top:18px">
+        <div class="rail-step done"></div><div class="rail-step done"></div><div class="rail-step now"></div><div class="rail-step"></div>
+      </div>
+      <div class="row between" style="margin-top:6px">
+        <span class="label-muted" style="font-size:9px">Sent</span>
+        <span class="label-muted" style="font-size:9px">Opened</span>
+        <span class="label" style="font-size:9px">Signing</span>
+        <span class="label-muted" style="font-size:9px">Signed</span>
+      </div>
+    </div>
+
+    <div class="row between" style="padding:24px 4px 10px;align-items:center">
+      <span class="label-muted">Recent</span>
+      <span class="tabular" style="display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:22px;padding:0 8px;border-radius:11px;background:#0A0A0A;color:#F2F0E8;font-size:11px;font-weight:700">4</span>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="card">
+        <div class="row between" style="align-items:flex-start">
+          <div style="flex:1">
+            <div class="label-muted" style="margin-bottom:4px">Atlas Health</div>
+            <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.02em;line-height:1.1">iOS engineering · MSA 049</div>
+          </div>
+          <div class="chip chip-success"><span class="cd"></span>Signed</div>
+        </div>
+        <div class="rail" style="margin-top:12px">
+          <div class="rail-step done"></div><div class="rail-step done"></div><div class="rail-step done"></div><div class="rail-step done"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="row between" style="align-items:flex-start">
+          <div style="flex:1">
+            <div class="label-muted" style="margin-bottom:4px">Atlas Health</div>
+            <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.02em;line-height:1.1">AR contractor · MSA 042</div>
+          </div>
+          <div class="chip chip-warning"><span class="cd"></span>Awaiting countersig.</div>
+        </div>
+        <div class="rail" style="margin-top:12px">
+          <div class="rail-step done"></div><div class="rail-step done"></div><div class="rail-step now"></div><div class="rail-step"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

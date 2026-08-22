@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#F2F0E8;color:#0A0A0A;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#F2F0E8;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:64px 20px 100px;overflow:hidden}
+    .display{font-family:'Archivo','Manrope',system-ui,sans-serif;font-weight:800;letter-spacing:-0.02em;line-height:0.9}
+    .label-muted{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#7A7A70}
+    .meta{font-weight:500;font-size:13px;color:#7A7A70;letter-spacing:-0.005em}
+    .row{display:flex;align-items:center;gap:12px}
+    .between{justify-content:space-between}
+    .avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;flex-shrink:0}
+    .back{border:0;background:rgba(10,10,10,0.05);border-radius:18px;padding:8px 12px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
+    .thread{padding:14px 0;border-top:0.5px solid #E8E6DF;display:flex;gap:12px;align-items:center}
+    .thread:first-of-type{border-top:0}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <button class="back" style="margin-bottom:16px">
+      <svg width="12" height="14" viewBox="0 0 8 14"><path d="M7 1L1 7l6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Today
+    </button>
+
+    <div class="display" style="font-size:64px;letter-spacing:-0.04em">You have<br>07<br>unread.</div>
+
+    <div style="margin-top:28px">
+      <div class="thread">
+        <div class="avatar" style="background:#A39E85;color:#0A0A0A">MC</div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:4px">
+          <div class="row between">
+            <div class="meta">to Maya Chen</div>
+            <div class="label-muted" style="font-size:10px">12m</div>
+          </div>
+          <div style="font-size:14px;color:#0A0A0A;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Got the comps — sending updates by EOD</div>
+        </div>
+        <div style="width:8px;height:8px;border-radius:50%;background:#F5F500"></div>
+      </div>
+      <div class="thread">
+        <div class="avatar" style="background:#A39E85;color:#0A0A0A">PI</div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:4px">
+          <div class="row between">
+            <div class="meta">to Priya Iyer</div>
+            <div class="label-muted" style="font-size:10px">1h</div>
+          </div>
+          <div style="font-size:14px;color:#0A0A0A;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Pushed the build, please review</div>
+        </div>
+        <div style="width:8px;height:8px;border-radius:50%;background:#F5F500"></div>
+      </div>
+      <div class="thread">
+        <div class="avatar" style="background:#4A5547;color:#E8E4DA">NM</div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:4px">
+          <div class="row between">
+            <div class="meta">to Nathaniel Mills</div>
+            <div class="label-muted" style="font-size:10px">3h</div>
+          </div>
+          <div style="font-size:14px;color:#0A0A0A;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Re: April milestone — looks good</div>
+        </div>
+      </div>
+      <div class="thread">
+        <div class="avatar" style="background:#7A7A70;color:#0A0A0A">CR</div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:4px">
+          <div class="row between">
+            <div class="meta">to Carlos Reyes</div>
+            <div class="label-muted" style="font-size:10px">Yesterday</div>
+          </div>
+          <div style="font-size:14px;color:#0A0A0A;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Sent the AFIP form, it should be...</div>
+        </div>
+      </div>
+      <div class="thread">
+        <div class="avatar" style="background:#7C5A3A;color:#F5EFE3">AQ</div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:4px">
+          <div class="row between">
+            <div class="meta">to Amaru Quispe</div>
+            <div class="label-muted" style="font-size:10px">2d</div>
+          </div>
+          <div style="font-size:14px;color:#0A0A0A;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Thanks Adriana, looking forward.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

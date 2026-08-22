@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#A39E85;color:#0A0A0A;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#A39E85;overflow:hidden;display:flex;flex-direction:column;padding:64px 24px 0}
+    .display{font-family:'Archivo','Manrope',system-ui,sans-serif;font-weight:800;letter-spacing:-0.02em;line-height:0.92}
+    .label{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase}
+    .meta{font-weight:500;font-size:13px;letter-spacing:-0.005em}
+    .tabular{font-variant-numeric:tabular-nums}
+    .dial{position:relative;flex:1;margin-top:24px}
+    .initials{font-family:'Archivo',sans-serif;font-weight:700;font-size:9px;text-align:center;margin-top:6px;letter-spacing:0.06em;text-transform:uppercase}
+    .avatar-node{position:absolute;transform:translate(-50%,-50%)}
+    .av{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:700;font-size:15px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+    .paid{background:#F5F500 !important}
+    .paying{box-shadow:0 0 0 2px #0A0A0A}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="label" style="color:rgba(10,10,10,0.6)">Sending payments</div>
+  <div class="display" style="font-size:88px;margin-top:16px;letter-spacing:-0.04em;line-height:0.9">
+    <span class="tabular">05</span><span style="font-size:42px;color:rgba(10,10,10,0.45);font-weight:600"> of 12</span>
+  </div>
+  <div class="meta" style="color:rgba(10,10,10,0.7);margin-top:6px">each payment cleared on its local rail</div>
+
+  <div class="dial">
+    <svg viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="none" style="position:absolute;inset:0">
+      <path d="M 8 80 A 42 42 0 0 1 92 80" fill="none" stroke="rgba(10,10,10,0.12)" stroke-width="0.3" stroke-dasharray="0.6 1.6"/>
+    </svg>
+    <!-- 9 contractors arranged on a wide arc; first 5 paid (yellow ✓), 6th paying, rest pending -->
+    <div class="avatar-node" style="left:8%;top:80%"><div class="av paid"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M5 11l4 4 8-8" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="initials">MC</div></div>
+    <div class="avatar-node" style="left:22%;top:47%"><div class="av paid"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M5 11l4 4 8-8" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="initials">CR</div></div>
+    <div class="avatar-node" style="left:35%;top:24%"><div class="av paid"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M5 11l4 4 8-8" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="initials">AQ</div></div>
+    <div class="avatar-node" style="left:50%;top:16%"><div class="av paid"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M5 11l4 4 8-8" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="initials">PI</div></div>
+    <div class="avatar-node" style="left:65%;top:24%"><div class="av paid"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M5 11l4 4 8-8" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="initials">NM</div></div>
+    <div class="avatar-node" style="left:78%;top:47%"><div class="av paying" style="background:#FAF9F2;color:#0A0A0A">HA</div><div class="initials">HA</div></div>
+    <div class="avatar-node" style="left:88%;top:80%"><div class="av" style="background:#FAF9F2;color:#0A0A0A">KV</div><div class="initials" style="color:rgba(10,10,10,0.5)">KV</div></div>
+    <div class="avatar-node" style="left:96%;top:96%"><div class="av" style="background:#FAF9F2;color:#0A0A0A">AB</div><div class="initials" style="color:rgba(10,10,10,0.5)">AB</div></div>
+  </div>
+
+  <div style="padding-bottom:120px">
+    <div class="meta" style="color:rgba(10,10,10,0.6);text-align:center">Each payment is sent on its destination's local rail.</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
