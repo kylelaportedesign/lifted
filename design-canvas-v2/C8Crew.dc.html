@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#EFEAE0;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#EFEAE0;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:56px 16px 96px;overflow:hidden}
+    .heading{font-weight:700;letter-spacing:-0.02em}
+    .label{font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:12px;color:#4A5651}
+    .tabular{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+    .card{background:#FBFAF6;border-radius:10px;padding:12px 14px;border:1px solid #E0DBCC}
+    .row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}
+    .btn-back{border:0;background:transparent;padding:0;display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:#4A5651}
+    .avatar{width:44px;height:44px;border-radius:8px;background:#4A5651;color:#EFEAE0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0}
+    .pill-warn{background:#F5E1B8;color:#7A5A18;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+    .pill-mist{background:#E5E1D8;color:#4A5651;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+    .pill-copper{background:#C86B3E;color:#FBFAF6;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+    .tabbar{position:absolute;bottom:0;left:0;right:0;height:76px;background:#1B3A2F;display:flex;justify-content:space-around;align-items:flex-start;padding:10px 8px 0}
+    .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#7A968C}
+    .tab.active{color:#EFEAE0}
+    .tab-dot{width:20px;height:2px;background:transparent;border-radius:2px;margin-top:2px}
+    .tab.active .tab-dot{background:#C86B3E}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <div class="row between" style="margin-bottom:14px">
+      <div><div class="heading" style="font-size:22px">Crew &amp; subs</div><div class="meta">9 subs · 1 insurance expiring</div></div>
+      <button style="height:32px;padding:0 12px;background:#1B3A2F;color:#EFEAE0;border:0;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase">+ Sub</button>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:14px">
+      <div class="card" style="padding:10px 12px"><div class="label" style="font-size:9px">Active subs</div><div class="tabular" style="font-size:20px">05</div></div>
+      <div class="card" style="padding:10px 12px"><div class="label" style="font-size:9px">Bids out</div><div class="tabular" style="font-size:20px;color:#C86B3E">03</div></div>
+    </div>
+
+    <div class="label" style="padding:0 0 8px">Roster</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div class="card">
+        <div class="row" style="gap:12px">
+          <div class="avatar">RR</div>
+          <div style="flex:1"><div style="font-weight:700;font-size:14px">Rivera Concrete</div><div class="meta" style="font-size:11px">Concrete + masonry · (415) 555-0142</div></div>
+          <span class="pill-copper">On site</span>
+        </div>
+        <div class="row between" style="margin-top:10px">
+          <span class="meta" style="font-size:11px">3 active projects</span>
+          <span class="meta" style="font-size:11px">Insurance · valid 12/2026</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="row" style="gap:12px">
+          <div class="avatar" style="background:#7A6C55">DK</div>
+          <div style="flex:1"><div style="font-weight:700;font-size:14px">D&amp;K Excavating</div><div class="meta" style="font-size:11px">Excavation + haul</div></div>
+          <span class="pill-warn">Ins. expires 5/12</span>
+        </div>
+        <div class="row between" style="margin-top:10px">
+          <span class="meta" style="font-size:11px">1 active project</span>
+          <span class="meta" style="font-size:11px">2 bids out</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="row" style="gap:12px">
+          <div class="avatar" style="background:#4A5B4A">CK</div>
+          <div style="flex:1"><div style="font-weight:700;font-size:14px">Coastal Kitchens</div><div class="meta" style="font-size:11px">Outdoor kitchen build</div></div>
+          <span class="pill-mist">Scheduled May 1</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="row" style="gap:12px">
+          <div class="avatar" style="background:#5C6B7A">HL</div>
+          <div style="flex:1"><div style="font-weight:700;font-size:14px">Halo Lighting</div><div class="meta" style="font-size:11px">Landscape + low-voltage</div></div>
+          <span class="pill-mist">Bid requested</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tabbar"><div class="tab"><span>Today</span></div><div class="tab"><span>Projects</span></div><div class="tab"><span>Money</span></div><div class="tab active"><span>People</span><div class="tab-dot"></div></div></div>
+</div>
+</x-dc>
+</body>
+</html>

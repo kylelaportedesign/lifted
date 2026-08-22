@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#FBFAF6;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#FBFAF6;overflow:hidden;display:flex;flex-direction:column;position:relative}
+    .display{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-0.01em;line-height:1.05}
+    .label{font-weight:600;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:13px;color:#4A5651;letter-spacing:-0.005em;line-height:1.55}
+    .tabular{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+    .content{flex:1;padding:56px 24px 120px;overflow:hidden}
+    .btn-back{border:0;background:transparent;padding:0;display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:#4A5651;margin-bottom:8px}
+    .section{margin-top:28px}
+    .section-hd{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid #E5E1D8}
+    .row-item{display:grid;grid-template-columns:1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid #E5E1D8}
+    .row-item:last-child{border-bottom:0}
+    .row-desc{font-size:15px;font-weight:500;line-height:1.35}
+    .row-detail{font-size:12px;color:#4A5651;margin-top:4px;line-height:1.4}
+    .row-price{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;text-align:right;white-space:nowrap}
+    .tier-toggle{display:flex;background:#F2EFE7;border-radius:999px;padding:3px;margin:12px 0}
+    .tier{flex:1;padding:8px 10px;text-align:center;font-size:12px;font-weight:600;color:#4A5651;border-radius:999px}
+    .tier.active{background:#1B3A2F;color:#FBFAF6}
+    .foot{position:absolute;left:0;right:0;bottom:0;padding:16px 24px 28px;background:#FBFAF6;border-top:1px solid #E5E1D8;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .foot .totals .num{font-family:'Instrument Serif',serif;font-size:32px}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <button class="btn-back">◃ Project</button>
+    <div class="label">Proposal · v2</div>
+    <div class="display" style="font-size:32px;margin-top:8px">Your outdoor makeover</div>
+    <div class="meta" style="margin-top:6px">Ridgeline Design-Build · Marcus Whitfield · valid through May 15</div>
+
+    <div class="tier-toggle">
+      <div class="tier">Base</div>
+      <div class="tier active">Better</div>
+      <div class="tier">Best</div>
+    </div>
+    <div class="meta" style="font-size:12px;color:#4A5651;font-style:italic">Compare tiers side-by-side</div>
+
+    <div class="section">
+      <div class="section-hd">
+        <div><div class="label">Site prep</div></div>
+        <div class="tabular" style="font-size:13px;color:#4A5651">$18,400</div>
+      </div>
+      <div class="row-item">
+        <div>
+          <div class="row-desc">Demolition</div>
+          <div class="row-detail">Break out and haul off the existing 720sf concrete patio.</div>
+        </div>
+        <div class="row-price">$8,640</div>
+      </div>
+      <div class="row-item">
+        <div>
+          <div class="row-desc">Excavation and base</div>
+          <div class="row-detail">Six inches of recompacted 3/4" minus with geotextile.</div>
+        </div>
+        <div class="row-price">$9,760</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-hd">
+        <div><div class="label">Hardscape</div></div>
+        <div class="tabular" style="font-size:13px;color:#4A5651">$62,300</div>
+      </div>
+      <div class="row-item">
+        <div>
+          <div class="row-desc">The patio itself</div>
+          <div class="row-detail">Techo-Bloc Blu 60 pavers · 720sf in your chosen tone.</div>
+        </div>
+        <div class="row-price">$41,400</div>
+      </div>
+      <div class="row-item">
+        <div>
+          <div class="row-desc">Seat wall around the fire</div>
+          <div class="row-detail">Veneer face, 18" high, 32 lineal feet with integrated LED cove.</div>
+        </div>
+        <div class="row-price">$14,600</div>
+      </div>
+      <div class="row-item">
+        <div>
+          <div class="row-desc">Gas fire pit</div>
+          <div class="row-detail">36" round, lava rock, safety thermocouple.</div>
+        </div>
+        <div class="row-price">$6,300</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-hd">
+        <div><div class="label">Outdoor kitchen</div></div>
+        <div class="tabular" style="font-size:13px;color:#4A5651">$44,100</div>
+      </div>
+      <div class="row-item">
+        <div><div class="row-desc">The kitchen build</div><div class="row-detail">L-shape 12' island, granite counter, veneer.</div></div>
+        <div class="row-price">$28,400</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="totals">
+      <div class="label" style="font-size:9px;letter-spacing:0.14em">Total investment</div>
+      <div class="num">$124,800</div>
+    </div>
+    <button style="background:#1B3A2F;color:#FBFAF6;border:0;padding:16px 22px;border-radius:12px;font-size:14px;font-weight:600">Sign and pay deposit</button>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

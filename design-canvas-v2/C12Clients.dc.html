@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#EFEAE0;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#EFEAE0;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:56px 16px 96px;overflow:hidden}
+    .heading{font-weight:700;letter-spacing:-0.02em}
+    .label{font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:12px;color:#4A5651}
+    .tabular{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+    .row{display:flex;align-items:center;gap:12px}.between{justify-content:space-between}
+    .avatar{width:40px;height:40px;border-radius:50%;background:#4A5651;color:#EFEAE0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
+    .search{background:#FBFAF6;border:1px solid #DDD6C7;border-radius:8px;padding:9px 12px;display:flex;align-items:center;gap:8px;margin-bottom:14px}
+    .cli{padding:12px 0;display:flex;align-items:center;gap:12px;border-bottom:1px solid #E5E1D8}
+    .tabbar{position:absolute;bottom:0;left:0;right:0;height:76px;background:#1B3A2F;display:flex;justify-content:space-around;align-items:flex-start;padding:10px 8px 0}
+    .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#7A968C}
+    .tab.active{color:#EFEAE0}
+    .tab-dot{width:20px;height:2px;background:transparent;border-radius:2px;margin-top:2px}
+    .tab.active .tab-dot{background:#C86B3E}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <div class="row between" style="margin-bottom:12px">
+      <div><div class="heading" style="font-size:22px">Clients</div><div class="meta">28 clients · 6 active</div></div>
+      <button style="height:32px;padding:0 12px;background:#1B3A2F;color:#EFEAE0;border:0;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase">+ Client</button>
+    </div>
+    <div class="search"><svg width="14" height="14" viewBox="0 0 22 22"><circle cx="11" cy="11" r="7" stroke="#4A5651" stroke-width="1.6" fill="none"/><path d="M16 16l4 4" stroke="#4A5651" stroke-width="1.6" stroke-linecap="round"/></svg><span style="color:#7A8480;font-size:13px">Search name, address, phone…</span></div>
+
+    <div class="cli">
+      <div class="avatar" style="background:#7A6C55">RC</div>
+      <div style="flex:1">
+        <div style="font-weight:700;font-size:14px">Rachel &amp; Tom Cotter</div>
+        <div class="meta" style="font-size:11px">24 Ridgeline Rd · 2 projects · $142,800 active</div>
+      </div>
+      <svg width="8" height="14" viewBox="0 0 8 14"><path d="M1 1l6 6-6 6" stroke="#7A8480" stroke-width="2" fill="none"/></svg>
+    </div>
+    <div class="cli">
+      <div class="avatar" style="background:#4A5B4A">DV</div>
+      <div style="flex:1"><div style="font-weight:700;font-size:14px">Dana Vega</div><div class="meta" style="font-size:11px">8 Beacon Hill · pool deck active · $88,400</div></div>
+      <svg width="8" height="14" viewBox="0 0 8 14"><path d="M1 1l6 6-6 6" stroke="#7A8480" stroke-width="2" fill="none"/></svg>
+    </div>
+    <div class="cli">
+      <div class="avatar" style="background:#5C6B7A">MH</div>
+      <div style="flex:1"><div style="font-weight:700;font-size:14px">Miguel Harlan</div><div class="meta" style="font-size:11px">12 Cavendish · signed · deposit pending</div></div>
+      <svg width="8" height="14" viewBox="0 0 8 14"><path d="M1 1l6 6-6 6" stroke="#7A8480" stroke-width="2" fill="none"/></svg>
+    </div>
+    <div class="cli">
+      <div class="avatar" style="background:#8A5A3A">SM</div>
+      <div style="flex:1"><div style="font-weight:700;font-size:14px">Sarah Marino</div><div class="meta" style="font-size:11px">44 Ashford · estimate v1 sent 3d</div></div>
+      <svg width="8" height="14" viewBox="0 0 8 14"><path d="M1 1l6 6-6 6" stroke="#7A8480" stroke-width="2" fill="none"/></svg>
+    </div>
+    <div class="cli">
+      <div class="avatar" style="background:#7A5A5A">KD</div>
+      <div style="flex:1"><div style="font-weight:700;font-size:14px">Karl Delaney</div><div class="meta" style="font-size:11px">6 Hollow · lead · call scheduled Apr 26</div></div>
+      <svg width="8" height="14" viewBox="0 0 8 14"><path d="M1 1l6 6-6 6" stroke="#7A8480" stroke-width="2" fill="none"/></svg>
+    </div>
+    <div class="cli">
+      <div class="avatar" style="background:#4A5651">EO</div>
+      <div style="flex:1"><div style="font-weight:700;font-size:14px">Ebele Okonkwo</div><div class="meta" style="font-size:11px">18 Millgate · complete · referred 2</div></div>
+      <svg width="8" height="14" viewBox="0 0 8 14"><path d="M1 1l6 6-6 6" stroke="#7A8480" stroke-width="2" fill="none"/></svg>
+    </div>
+  </div>
+  <div class="tabbar"><div class="tab"><span>Today</span></div><div class="tab"><span>Projects</span></div><div class="tab"><span>Money</span></div><div class="tab active"><span>People</span><div class="tab-dot"></div></div></div>
+</div>
+</x-dc>
+</body>
+</html>

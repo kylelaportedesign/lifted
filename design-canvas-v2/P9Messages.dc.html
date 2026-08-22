@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#FBFAF6;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#FBFAF6;overflow:hidden;display:flex;flex-direction:column;position:relative}
+    .content{flex:1;padding:56px 24px 90px;overflow:hidden}
+    .display{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-0.01em;line-height:1.05}
+    .label{font-weight:600;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:13px;color:#4A5651;line-height:1.5}
+    .btn-back{border:0;background:transparent;padding:0;display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:#4A5651;margin-bottom:8px}
+    .avatar{width:36px;height:36px;border-radius:50%;background:#4A5651;color:#FBFAF6;display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:14px;flex-shrink:0}
+    .bubble{max-width:82%;padding:12px 14px;border-radius:16px;font-size:14px;line-height:1.5;margin-top:8px}
+    .them{background:#F2EFE7;color:#0F1310;border-bottom-left-radius:4px}
+    .me{background:#1B3A2F;color:#FBFAF6;border-bottom-right-radius:4px;margin-left:auto}
+    .decision{background:#FFF7EF;border:1px solid #E5D3B8;border-radius:12px;padding:12px 14px;margin-top:14px}
+    .decision .lbl{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#7A5A18;font-weight:700;margin-bottom:4px}
+    .decision .body{font-size:13px;color:#0F1310;line-height:1.45}
+    .compose{position:absolute;left:0;right:0;bottom:0;padding:12px 20px 24px;background:rgba(251,250,246,0.95);border-top:1px solid #E5E1D8;backdrop-filter:blur(8px);display:flex;align-items:center;gap:10px}
+    .field{flex:1;background:#F2EFE7;border-radius:20px;padding:11px 16px;color:#4A5651;font-size:14px}
+    .send{width:38px;height:38px;border-radius:50%;background:#1B3A2F;color:#FBFAF6;display:flex;align-items:center;justify-content:center;border:0;font-size:16px}
+    .row{display:flex;align-items:center;gap:12px}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <button class="btn-back">◃ Project</button>
+    <div class="row" style="align-items:flex-start;justify-content:space-between;margin-bottom:20px">
+      <div>
+        <div class="label">Messages</div>
+        <div class="display" style="font-size:28px;margin-top:6px">Marcus</div>
+      </div>
+      <div class="avatar" style="background:#1B3A2F">M</div>
+    </div>
+
+    <div>
+      <div class="bubble them">Hi Dana — quick heads up, second pour tomorrow morning at 7am. You'll hear the truck. Should be quiet after 10.</div>
+      <div class="bubble me">Great, thanks for the notice!</div>
+
+      <div class="decision">
+        <div class="lbl">Decision · pavers</div>
+        <div class="body">Dana selected <strong>Sandalwood</strong> on Apr 18. Adds $2,400. Sent as CO #002 · signed.</div>
+      </div>
+
+      <div class="bubble them" style="margin-top:14px">Confirming the sandalwood pavers are ordered — Techo-Bloc factory in Sonoma, arriving Apr 25.</div>
+      <div class="bubble me">Perfect. Excited to see them in.</div>
+      <div class="bubble them">Attaching a sample photo from last week's Beacon project — same tone.</div>
+    </div>
+  </div>
+
+  <div class="compose">
+    <div class="field">Message Marcus…</div>
+    <button class="send">↑</button>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

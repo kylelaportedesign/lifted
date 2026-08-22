@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#F2F0E8;color:#0A0A0A;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#F2F0E8;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:64px 20px 100px;overflow:hidden}
+    .display{font-family:'Archivo','Manrope',system-ui,sans-serif;font-weight:800;letter-spacing:-0.02em;line-height:0.92}
+    .display-md{font-family:'Archivo','Manrope',system-ui,sans-serif;font-weight:800;letter-spacing:-0.025em;line-height:0.95;font-size:32px}
+    .label{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#0A0A0A}
+    .label-muted{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#7A7A70}
+    .meta{font-weight:500;font-size:13px;color:#7A7A70;letter-spacing:-0.005em}
+    .tabular{font-variant-numeric:tabular-nums}
+    .card{background:#FAF9F2;border-radius:16px;padding:16px;border:0.5px solid rgba(10,10,10,0.04)}
+    .card-mist{background:#E8E6DF;border-radius:16px;padding:16px}
+    .row{display:flex;align-items:center;gap:10px}
+    .avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;flex-shrink:0}
+    .back{border:0;background:rgba(10,10,10,0.05);border-radius:18px;padding:8px 12px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <button class="back" style="margin-bottom:16px">
+      <svg width="12" height="14" viewBox="0 0 8 14"><path d="M7 1L1 7l6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Today
+    </button>
+
+    <div class="display" style="font-size:48px;letter-spacing:-0.03em;line-height:0.92">Approve<br>before Sunday.</div>
+    <div class="meta" style="margin-top:12px">Swipe right to approve. Tap to review.</div>
+
+    <div style="margin-top:28px;display:flex;flex-direction:column;gap:10px">
+      <div class="card">
+        <div class="row">
+          <div class="avatar" style="background:#A39E85">PI</div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:4px">
+            <div class="meta">to Priya Iyer</div>
+            <div style="font-weight:700;font-size:16px;letter-spacing:-0.01em">42h · $5,400</div>
+            <div class="meta">Apr 15-19 · weekly cycle</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end">
+            <span class="label-muted">cutoff</span>
+            <span class="label tabular" style="margin-top:4px">1d 02h</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="row">
+          <div class="avatar" style="background:#4A5547;color:#E8E4DA">NM</div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:4px">
+            <div class="meta">to Nathaniel Mills</div>
+            <div style="font-weight:700;font-size:16px;letter-spacing:-0.01em">36h · $3,120</div>
+            <div class="meta">Apr 15-19 · weekly cycle</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end">
+            <span class="label-muted">cutoff</span>
+            <span class="label tabular" style="margin-top:4px">1d 02h</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Approved summary card -->
+    <div class="card-mist" style="margin-top:20px">
+      <span class="label-muted">2 approved this session</span>
+      <div class="display-md tabular" style="margin-top:8px">$6,530</div>
+      <div class="meta">routed to next payroll run</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

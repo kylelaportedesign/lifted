@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#FBFAF6;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#0F1310;overflow:hidden;display:flex;flex-direction:column;position:relative}
+    .display{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-0.01em;line-height:1.05}
+    .label{font-weight:600;font-size:11px;letter-spacing:0.18em;text-transform:uppercase}
+    .meta{font-weight:500;font-size:13px;letter-spacing:-0.005em;line-height:1.55}
+    .tabular{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+    .row{display:flex;align-items:center;gap:12px}
+    .between{justify-content:space-between}
+    /* Full-screen render (client interactive) */
+    .render{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,#7A968C 0%,#4A6B6B 40%,#5C6B4A 40.1%,#3D4A2E 100%)}
+    .render::before{content:'';position:absolute;top:18%;left:15%;right:15%;bottom:32%;background:linear-gradient(180deg,rgba(200,107,62,0.35),rgba(122,108,85,0.7));border-radius:6px}
+    .top-chrome{position:absolute;top:0;left:0;right:0;padding:56px 20px 20px;background:linear-gradient(180deg,rgba(15,19,16,0.5),transparent);z-index:5;display:flex;align-items:center;justify-content:space-between}
+    .top-title{color:#FBFAF6;font-family:'Instrument Serif',serif;font-size:18px}
+    .close{width:34px;height:34px;border-radius:50%;background:rgba(15,19,16,0.4);backdrop-filter:blur(8px);color:#FBFAF6;display:flex;align-items:center;justify-content:center;border:0;font-size:20px}
+    /* Hotspot pins */
+    .hs{position:absolute;transform:translate(-50%,-50%);width:32px;height:32px;border-radius:50%;background:#C86B3E;border:3px solid #FBFAF6;color:#FBFAF6;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;box-shadow:0 4px 16px rgba(200,107,62,0.5),0 2px 6px rgba(0,0,0,0.4);z-index:6}
+    .hs.tapped{transform:translate(-50%,-50%) scale(1.15)}
+    .hs::before{content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(200,107,62,0.4);animation:none}
+    /* Sheet — hotspot detail */
+    .sheet{position:absolute;left:0;right:0;bottom:0;background:#FBFAF6;border-radius:24px 24px 0 0;padding:14px 24px 32px;z-index:10;box-shadow:0 -12px 40px rgba(0,0,0,0.25)}
+    .handle{width:44px;height:5px;border-radius:3px;background:#DDD6C7;margin:0 auto 16px}
+    .sheet-photo{width:100%;height:180px;border-radius:12px;background:linear-gradient(135deg,#7A6C55,#4A3D2E);margin-bottom:16px;position:relative;overflow:hidden}
+    .sheet-photo::before{content:'';position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.3))}
+    .carousel-dots{position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:5px}
+    .dot{width:6px;height:6px;border-radius:50%;background:rgba(251,250,246,0.4)}
+    .dot.active{background:#FBFAF6;width:18px;border-radius:3px}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="render">
+    <div class="top-chrome">
+      <div class="top-title">Ridgeline · v3</div>
+      <button class="close">×</button>
+    </div>
+    <!-- Pins on the render -->
+    <div class="hs" style="left:32%;top:40%">1</div>
+    <div class="hs tapped" style="left:58%;top:38%">2</div>
+    <div class="hs" style="left:72%;top:48%">3</div>
+    <div class="hs" style="left:24%;top:55%">4</div>
+    <div class="hs" style="left:50%;top:60%">5</div>
+  </div>
+
+  <!-- Detail sheet -->
+  <div class="sheet">
+    <div class="handle"></div>
+
+    <div class="sheet-photo">
+      <div class="carousel-dots"><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    </div>
+
+    <div class="label" style="color:#4A5651">Zone 2 · outdoor kitchen</div>
+    <div class="display" style="font-size:26px;margin-top:6px">12' L-shape outdoor kitchen</div>
+    <div class="meta" style="color:#4A5651;margin-top:6px">Techo-Bloc Blu 60 veneer, built-in 36" Lynx grill, honed granite counter, dual-zone beverage center under the wing.</div>
+
+    <div class="row between" style="margin-top:20px;padding-top:16px;border-top:1px solid #E5E1D8">
+      <div>
+        <div style="font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#4A5651;font-weight:600">Included in your proposal</div>
+        <div class="tabular" style="font-size:28px;margin-top:4px;color:#0F1310">$44,100</div>
+      </div>
+      <button style="background:transparent;border:1.5px solid #1B3A2F;color:#1B3A2F;padding:12px 18px;border-radius:999px;font-size:13px;font-weight:600">See breakdown</button>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

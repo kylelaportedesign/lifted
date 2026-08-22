@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#F2F0E8;color:#0A0A0A;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#F2F0E8;overflow:hidden;display:flex;flex-direction:column;padding:64px 24px 0}
+    .display{font-family:'Archivo','Manrope',system-ui,sans-serif;font-weight:800;letter-spacing:-0.04em;line-height:0.9}
+    .label{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase}
+    .meta{font-weight:500;font-size:13px;letter-spacing:-0.005em}
+    .tabular{font-variant-numeric:tabular-nums}
+    .dial{position:relative;flex:1;margin-top:24px}
+    .initials{font-family:'Archivo',sans-serif;font-weight:700;font-size:9px;text-align:center;margin-top:6px;letter-spacing:0.06em;text-transform:uppercase}
+    .avatar-node{position:absolute;transform:translate(-50%,-50%)}
+    .av{width:56px;height:56px;border-radius:50%;background:#F5F500;display:flex;align-items:center;justify-content:center}
+    .hero-ink{background:#0A0A0A;border-radius:20px;padding:22px 22px 24px;color:#F2F0E8}
+    .row{display:flex;align-items:center;justify-content:space-between}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="label" style="color:#7A7A70">Run complete</div>
+  <div class="display" style="font-size:88px;margin-top:16px">
+    <span class="tabular">12</span><span style="font-size:42px;color:rgba(10,10,10,0.45);font-weight:600"> of 12</span>
+  </div>
+  <div class="meta" style="color:rgba(10,10,10,0.7);margin-top:6px">$38,420.00 sent across 8 countries</div>
+
+  <div class="dial">
+    <svg viewBox="0 0 100 100" width="100%" height="100%" preserveAspectRatio="none" style="position:absolute;inset:0"><path d="M 8 80 A 42 42 0 0 1 92 80" fill="none" stroke="rgba(10,10,10,0.12)" stroke-width="0.3" stroke-dasharray="0.6 1.6"/></svg>
+    <!-- all 9 avatars yellow with checkmark -->
+    <div class="avatar-node" style="left:8%;top:80%"><div class="av"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M5 11l4 4 8-8" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="initials">MC</div></div>
+    <div class="avatar-node" style="left:22%;top:52%"><div class="av"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M5 11l4 4 8-8" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="initials">CR</div></div>
+    <div class="avatar-node" style="left:35%;top:32%"><div class="av"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M5 11l4 4 8-8" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="initials">AQ</div></div>
+    <div class="avatar-node" style="left:50%;top:22%"><div class="av"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M5 11l4 4 8-8" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="initials">PI</div></div>
+    <div class="avatar-node" style="left:65%;top:32%"><div class="av"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M5 11l4 4 8-8" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="initials">NM</div></div>
+    <div class="avatar-node" style="left:78%;top:52%"><div class="av"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M5 11l4 4 8-8" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="initials">HA</div></div>
+    <div class="avatar-node" style="left:88%;top:80%"><div class="av"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M5 11l4 4 8-8" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="initials">KV</div></div>
+  </div>
+
+  <div style="padding-bottom:24px">
+    <div class="hero-ink" style="margin-bottom:12px">
+      <div class="row" style="margin-bottom:10px">
+        <span class="label" style="color:rgba(242,240,232,0.55)">Receipt</span>
+        <span class="label" style="color:#F5F500">All paid</span>
+      </div>
+      <div class="display" style="font-size:36px;color:#F2F0E8;letter-spacing:-0.03em">$38,420</div>
+      <div class="meta" style="color:rgba(242,240,232,0.7);margin-top:4px">Total fees $13.50 · 12 of 12 cleared</div>
+    </div>
+    <button style="width:100%;height:56px;border-radius:28px;border:0;background:#0A0A0A;color:#F2F0E8;font-weight:700;font-size:14px;letter-spacing:0.04em;text-transform:uppercase">Back to today</button>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#EFEAE0;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#EFEAE0;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:56px 16px 96px;overflow:hidden}
+    .heading{font-weight:700;letter-spacing:-0.02em}
+    .label{font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:12px;color:#4A5651}
+    .row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}
+    .list{background:#FBFAF6;border-radius:10px;border:1px solid #E0DBCC;overflow:hidden;margin-bottom:14px}
+    .lrow{padding:14px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E5E1D8;gap:10px}
+    .lrow:last-child{border-bottom:0}
+    .lrow-val{font-size:13px;color:#4A5651;font-weight:500}
+    .avatar-lg{width:64px;height:64px;border-radius:12px;background:#1B3A2F;color:#EFEAE0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;font-family:'Instrument Serif',serif}
+    .tabbar{position:absolute;bottom:0;left:0;right:0;height:76px;background:#1B3A2F;display:flex;justify-content:space-around;align-items:flex-start;padding:10px 8px 0}
+    .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#7A968C}
+    .tab.active{color:#EFEAE0}
+    .tab-dot{width:20px;height:2px;background:transparent;border-radius:2px;margin-top:2px}
+    .tab.active .tab-dot{background:#C86B3E}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <div class="heading" style="font-size:22px;margin-bottom:14px">Settings</div>
+
+    <div class="row" style="gap:14px;margin-bottom:20px">
+      <div class="avatar-lg">R</div>
+      <div><div style="font-weight:700;font-size:16px">Ridgeline Design-Build</div><div class="meta" style="font-size:12px">Marcus Whitfield · owner</div><div class="meta" style="font-size:11px;margin-top:2px">Lic #778234 · CA C-27</div></div>
+    </div>
+
+    <div class="label" style="padding:0 0 6px">Company</div>
+    <div class="list">
+      <div class="lrow"><span>Company name</span><span class="lrow-val">Ridgeline Design-Build</span></div>
+      <div class="lrow"><span>License number</span><span class="lrow-val">778234</span></div>
+      <div class="lrow"><span>Logo</span><span class="lrow-val">Uploaded ↻</span></div>
+      <div class="lrow"><span>Business address</span><span class="lrow-val">42 Main St, Petaluma CA</span></div>
+    </div>
+
+    <div class="label" style="padding:0 0 6px">Payments</div>
+    <div class="list">
+      <div class="lrow"><span>Stripe Connect</span><span class="lrow-val" style="color:#4A7A50">● Verified · Chase ••4820</span></div>
+      <div class="lrow"><span>Deposit percentage</span><span class="lrow-val">30%</span></div>
+      <div class="lrow"><span>Tax rate</span><span class="lrow-val">8.5%</span></div>
+      <div class="lrow"><span>Payment terms</span><span class="lrow-val">Net 15</span></div>
+    </div>
+
+    <div class="label" style="padding:0 0 6px">Team</div>
+    <div class="list">
+      <div class="lrow"><span>Seats</span><span class="lrow-val">4 of 6 used</span></div>
+      <div class="lrow"><span>Roles</span><span class="lrow-val">Owner · Staff · Foreman</span></div>
+    </div>
+
+    <div class="label" style="padding:0 0 6px">Account</div>
+    <div class="list">
+      <div class="lrow"><span>Plan</span><span class="lrow-val">Pro · $249/mo</span></div>
+      <div class="lrow" style="color:#B54F30"><span>Sign out</span><span></span></div>
+    </div>
+  </div>
+  <div class="tabbar"><div class="tab"><span>Today</span></div><div class="tab"><span>Projects</span></div><div class="tab"><span>Money</span></div><div class="tab active"><span>People</span><div class="tab-dot"></div></div></div>
+</div>
+</x-dc>
+</body>
+</html>

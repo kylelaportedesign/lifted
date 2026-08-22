@@ -1,16 +1,40 @@
 {
+  "pages": [
+    { "id": "flows", "name": "App flows" },
+    { "id": "system", "name": "Design system" }
+  ],
   "artboards": [
-    { "file": "Onboarding.dc.html", "x": 0,    "y": 0,    "w": 390, "h": 844, "title": "1 · Onboarding" },
-    { "file": "Main.dc.html",       "x": 490,  "y": 0,    "w": 390, "h": 844, "title": "2 · Today (home)" },
-    { "file": "Contractors.dc.html","x": 980,  "y": 0,    "w": 390, "h": 844, "title": "3 · Contractors" },
-    { "file": "Contracts.dc.html",  "x": 1470, "y": 0,    "w": 390, "h": 844, "title": "4 · Contracts" },
-    { "file": "Timesheets.dc.html", "x": 0,    "y": 970,  "w": 390, "h": 844, "title": "5 · Timesheets" },
-    { "file": "Payroll.dc.html",    "x": 490,  "y": 970,  "w": 390, "h": 844, "title": "6 · Payroll · preview" },
-    { "file": "Processing.dc.html", "x": 980,  "y": 970,  "w": 390, "h": 844, "title": "7 · Payroll · processing" },
-    { "file": "Messages.dc.html",   "x": 1470, "y": 970,  "w": 390, "h": 844, "title": "8 · Messages" }
+    { "file": "OnboardingWelcome.dc.html",  "page": "flows", "x": 0,    "y": 0,    "w": 390, "h": 844, "title": "Onboarding · 1 · Welcome" },
+    { "file": "OnboardingCompany.dc.html",  "page": "flows", "x": 490,  "y": 0,    "w": 390, "h": 844, "title": "Onboarding · 2 · Company" },
+    { "file": "OnboardingAdmin.dc.html",    "page": "flows", "x": 980,  "y": 0,    "w": 390, "h": 844, "title": "Onboarding · 3 · Admin" },
+    { "file": "OnboardingVerify.dc.html",   "page": "flows", "x": 1470, "y": 0,    "w": 390, "h": 844, "title": "Onboarding · 4 · Verify" },
+    { "file": "OnboardingFunding.dc.html",  "page": "flows", "x": 1960, "y": 0,    "w": 390, "h": 844, "title": "Onboarding · 5 · Funding" },
+    { "file": "OnboardingDone.dc.html",     "page": "flows", "x": 2450, "y": 0,    "w": 390, "h": 844, "title": "Onboarding · 6 · Done" },
+
+    { "file": "Main.dc.html",               "page": "flows", "x": 0,    "y": 974,  "w": 390, "h": 844, "title": "Today · home" },
+
+    { "file": "PayrollPreview.dc.html",     "page": "flows", "x": 0,    "y": 1948, "w": 390, "h": 844, "title": "Payroll · 1 · Preview" },
+    { "file": "PayrollConfirm.dc.html",     "page": "flows", "x": 490,  "y": 1948, "w": 390, "h": 844, "title": "Payroll · 2 · Confirm sheet" },
+    { "file": "PayrollProcessing.dc.html",  "page": "flows", "x": 980,  "y": 1948, "w": 390, "h": 844, "title": "Payroll · 3 · Processing" },
+    { "file": "PayrollReceipt.dc.html",     "page": "flows", "x": 1470, "y": 1948, "w": 390, "h": 844, "title": "Payroll · 4 · Receipt" },
+
+    { "file": "Contractors.dc.html",        "page": "flows", "x": 0,    "y": 2922, "w": 390, "h": 844, "title": "Contractors · overview" },
+
+    { "file": "Contracts.dc.html",          "page": "flows", "x": 0,    "y": 3896, "w": 390, "h": 844, "title": "Contracts · list" },
+
+    { "file": "TimesheetsPending.dc.html",  "page": "flows", "x": 0,    "y": 4870, "w": 390, "h": 844, "title": "Timesheets · 1 · Pending" },
+    { "file": "TimesheetsApproved.dc.html", "page": "flows", "x": 490,  "y": 4870, "w": 390, "h": 844, "title": "Timesheets · 2 · Approved" },
+
+    { "file": "MessagesInbox.dc.html",      "page": "flows", "x": 0,    "y": 5844, "w": 390, "h": 844, "title": "Messages · 1 · Inbox" },
+    { "file": "MessagesThread.dc.html",     "page": "flows", "x": 490,  "y": 5844, "w": 390, "h": 844, "title": "Messages · 2 · Thread" },
+
+    { "file": "Dashboard.dc.html",          "page": "flows", "x": 0,    "y": 6818, "w": 390, "h": 844, "title": "Dashboard · profile" },
+
+    { "file": "DesignSystem.dc.html",       "page": "system", "x": 0,   "y": 0,    "w": 1400, "h": 3400, "title": "Lifted · design system", "expand": "fit" }
   ],
   "annotations": [
-    { "id": "flow-note", "x": 0, "y": -160, "w": 900, "text": "Lifted — major screen flows\nRow 1: enter the app (Onboarding → Today) and drill into the two overview surfaces (Contractors, Contracts).\nRow 2: the recurring loops (Timesheets → Payroll preview → Payroll processing) and Messages." }
+    { "id": "flows-note",  "page": "flows",  "x": 0, "y": -180, "w": 900, "text": "Lifted — app flows\nEach row is a major flow, sequenced left → right. Rows: Onboarding · Today · Payroll · Contractors · Contracts · Timesheets · Messages · Dashboard." },
+    { "id": "system-note", "page": "system", "x": 0, "y": -180, "w": 900, "text": "Lifted — design system v1.0\nBrand principles, tokens, type, components, iconography, motion. Living document — edit anything." }
   ],
-  "launch": { "view": "canvas" }
+  "launch": { "view": "canvas", "page": "flows" }
 }

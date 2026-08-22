@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#EFEAE0;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#EFEAE0;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:56px 16px 96px;overflow:hidden}
+    .heading{font-weight:700;letter-spacing:-0.02em}
+    .label{font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:12px;color:#4A5651}
+    .tabular{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+    .row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}
+    .btn-back{border:0;background:transparent;padding:0;display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:#4A5651}
+    .phase{background:#FBFAF6;border-radius:10px;border:1px solid #E0DBCC;overflow:hidden;margin-bottom:8px}
+    .phase-hd{padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .phase-bar{height:6px;background:#E5E1D8;position:relative}
+    .phase-fill{position:absolute;left:0;top:0;height:100%;background:#1B3A2F}
+    .phase.now .phase-fill{background:#C86B3E}
+    .phase-body{padding:10px 14px 14px;font-size:12px;color:#4A5651;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .chip{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:999px;font-size:10px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;background:#E5E1D8;color:#4A5651}
+    .chip-copper{background:#C86B3E;color:#FBFAF6}
+    .chip-moss{background:#4A7A50;color:#FBFAF6}
+    .tabbar{position:absolute;bottom:0;left:0;right:0;height:76px;background:#1B3A2F;display:flex;justify-content:space-around;align-items:flex-start;padding:10px 8px 0}
+    .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#7A968C}
+    .tab.active{color:#EFEAE0}
+    .tab-dot{width:20px;height:2px;background:transparent;border-radius:2px;margin-top:2px}
+    .tab.active .tab-dot{background:#C86B3E}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <button class="btn-back" style="margin-bottom:8px"><svg width="10" height="12" viewBox="0 0 8 14"><path d="M7 1L1 7l6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>Cotter · patio</button>
+    <div class="row between" style="margin-bottom:14px">
+      <div><div class="heading" style="font-size:22px">Schedule</div><div class="meta">6 phases · Mar 3 → Jun 8 · on track −2d</div></div>
+      <button style="height:32px;padding:0 12px;background:#1B3A2F;color:#EFEAE0;border:0;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase">+ Phase</button>
+    </div>
+
+    <div class="phase">
+      <div class="phase-hd"><div><div style="font-size:14px;font-weight:700">1 · Demo</div><div class="meta" style="font-size:11px">Mar 3 → Mar 8 · Reuben Rivera</div></div><span class="chip chip-moss">Done</span></div>
+      <div class="phase-bar"><div class="phase-fill" style="width:100%"></div></div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-hd"><div><div style="font-size:14px;font-weight:700">2 · Excavation + base</div><div class="meta" style="font-size:11px">Mar 10 → Mar 20 · D&K Excavating</div></div><span class="chip chip-moss">Done</span></div>
+      <div class="phase-bar"><div class="phase-fill" style="width:100%"></div></div>
+    </div>
+
+    <div class="phase now">
+      <div class="phase-hd"><div><div style="font-size:14px;font-weight:700">3 · Concrete + hardscape</div><div class="meta" style="font-size:11px">Mar 22 → Apr 28 · Rivera Concrete</div></div><span class="chip chip-copper">In progress · Day 24/38</span></div>
+      <div class="phase-bar"><div class="phase-fill" style="width:63%"></div></div>
+      <div class="phase-body">
+        <span class="chip">2 pours done</span>
+        <span class="chip">Paver install starts Apr 26</span>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-hd"><div><div style="font-size:14px;font-weight:700">4 · Outdoor kitchen</div><div class="meta" style="font-size:11px">May 1 → May 18 · Coastal Kitchens</div></div><span class="chip">Scheduled</span></div>
+      <div class="phase-bar"><div class="phase-fill" style="width:0"></div></div>
+      <div class="phase-body meta" style="font-size:11px">Depends on Phase 3 · pour cure 28d</div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-hd"><div><div style="font-size:14px;font-weight:700">5 · Finish carpentry + lighting</div><div class="meta" style="font-size:11px">May 20 → Jun 2 · Marcus (in-house)</div></div><span class="chip">Scheduled</span></div>
+      <div class="phase-bar"><div class="phase-fill" style="width:0"></div></div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-hd"><div><div style="font-size:14px;font-weight:700">6 · Punch + walkthrough</div><div class="meta" style="font-size:11px">Jun 4 → Jun 8</div></div><span class="chip">Scheduled</span></div>
+      <div class="phase-bar"><div class="phase-fill" style="width:0"></div></div>
+    </div>
+  </div>
+  <div class="tabbar"><div class="tab"><span>Today</span></div><div class="tab active"><span>Projects</span><div class="tab-dot"></div></div><div class="tab"><span>Money</span></div><div class="tab"><span>People</span></div></div>
+</div>
+</x-dc>
+</body>
+</html>

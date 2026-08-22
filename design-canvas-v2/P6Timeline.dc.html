@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#FBFAF6;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#FBFAF6;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:56px 24px 40px;overflow:hidden}
+    .display{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-0.01em;line-height:1.05}
+    .label{font-weight:600;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:13px;color:#4A5651;line-height:1.5}
+    .btn-back{border:0;background:transparent;padding:0;display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:#4A5651;margin-bottom:8px}
+    /* Vertical timeline */
+    .tl{position:relative;padding-left:28px;margin-top:24px}
+    .tl::before{content:'';position:absolute;left:9px;top:12px;bottom:12px;width:1.5px;background:#E5E1D8}
+    .step{position:relative;padding-bottom:24px}
+    .step::before{content:'';position:absolute;left:-24px;top:6px;width:18px;height:18px;border-radius:50%;background:#FBFAF6;border:1.5px solid #DDD6C7}
+    .step.done::before{background:#1B3A2F;border-color:#1B3A2F}
+    .step.now::before{background:#C86B3E;border-color:#C86B3E;box-shadow:0 0 0 6px rgba(200,107,62,0.2)}
+    .step-hd{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.15}
+    .step-date{font-size:12px;color:#4A5651;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;margin-bottom:4px}
+    .step-body{font-size:13px;color:#4A5651;line-height:1.5;margin-top:6px}
+    .step.done .step-hd{color:#4A5651}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <button class="btn-back">◃ Project</button>
+    <div class="label">Timeline</div>
+    <div class="display" style="font-size:32px;margin-top:8px">Mar 3 to <em>Jun 8.</em></div>
+    <div class="meta" style="margin-top:6px">Two days ahead of schedule.</div>
+
+    <div class="tl">
+      <div class="step done">
+        <div class="step-date">Mar 3 · done</div>
+        <div class="step-hd">Demolition</div>
+        <div class="step-body">Old patio broken out and hauled off.</div>
+      </div>
+      <div class="step done">
+        <div class="step-date">Mar 10 · done</div>
+        <div class="step-hd">Excavation and base</div>
+        <div class="step-body">Recompacted base ready for concrete.</div>
+      </div>
+      <div class="step now">
+        <div class="step-date" style="color:#C86B3E">Now · day 24 of 38</div>
+        <div class="step-hd">Concrete and hardscape</div>
+        <div class="step-body">Rivera Concrete on site. Second pour tomorrow, pavers installed the week of Apr 26.</div>
+      </div>
+      <div class="step">
+        <div class="step-date">May 1 → May 18</div>
+        <div class="step-hd">Outdoor kitchen build</div>
+        <div class="step-body">Coastal Kitchens installs the island, grill and beverage center.</div>
+      </div>
+      <div class="step">
+        <div class="step-date">May 20 → Jun 2</div>
+        <div class="step-hd">Finish carpentry and lighting</div>
+      </div>
+      <div class="step">
+        <div class="step-date">Jun 4 → Jun 8</div>
+        <div class="step-hd">Punch list and walkthrough</div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

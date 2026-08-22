@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#EFEAE0;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#EFEAE0;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:56px 0 96px;overflow:hidden}
+    .heading{font-family:'Inter',sans-serif;font-weight:700;letter-spacing:-0.02em}
+    .label{font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:12px;color:#4A5651}
+    .tabular{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+    .row{display:flex;align-items:center;gap:10px}
+    .between{justify-content:space-between}
+    .btn-back{border:0;background:transparent;padding:0;display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:#4A5651}
+    .section-hd{padding:12px 16px 6px;background:#EFEAE0;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #DDD6C7}
+    .line{padding:10px 16px;border-bottom:1px solid #E5E1D8;background:#FBFAF6;display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:baseline}
+    .line-desc{font-size:13px;font-weight:600;color:#0F1310;line-height:1.3}
+    .line-detail{font-size:11px;color:#4A5651;margin-top:2px}
+    .line-qty{font-size:11px;color:#4A5651;text-align:right;white-space:nowrap}
+    .line-total{font-size:13px;font-weight:700;text-align:right;white-space:nowrap}
+    .tier-toggle{display:flex;background:#FBFAF6;border:1px solid #DDD6C7;border-radius:8px;padding:2px;margin:8px 16px 0}
+    .tier{flex:1;padding:6px 8px;text-align:center;font-size:11px;font-weight:600;color:#4A5651;border-radius:6px}
+    .tier.active{background:#1B3A2F;color:#EFEAE0}
+    .hs-mark{display:inline-block;width:14px;height:14px;border-radius:50%;background:#C86B3E;color:#FBFAF6;font-size:8px;font-weight:700;font-family:'IBM Plex Mono',monospace;line-height:14px;text-align:center;vertical-align:middle;margin-right:6px}
+    .foot{position:absolute;left:0;right:0;bottom:76px;background:#1B3A2F;color:#EFEAE0;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .foot .totals{display:flex;flex-direction:column}
+    .tabbar{position:absolute;bottom:0;left:0;right:0;height:76px;background:#0F2620;display:flex;justify-content:space-around;align-items:flex-start;padding:10px 8px 0}
+    .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#4A6B60}
+    .tab.active{color:#EFEAE0}
+    .tab-dot{width:20px;height:2px;background:transparent;border-radius:2px;margin-top:2px}
+    .tab.active .tab-dot{background:#C86B3E}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <div style="padding:0 16px 12px">
+      <button class="btn-back"><svg width="10" height="12" viewBox="0 0 8 14"><path d="M7 1L1 7l6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>Cotter · patio</button>
+      <div class="row between" style="margin-top:8px">
+        <div class="heading" style="font-size:22px">Estimate v2</div>
+        <div class="row" style="gap:6px">
+          <button style="width:32px;height:32px;border:1px solid #DDD6C7;background:#FBFAF6;border-radius:6px" title="Margin view">%</button>
+          <button style="height:32px;padding:0 12px;border:0;background:#1B3A2F;color:#EFEAE0;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tier-toggle">
+      <div class="tier">Base</div>
+      <div class="tier active">Better</div>
+      <div class="tier">Best</div>
+    </div>
+    <div style="padding:6px 16px;color:#4A5651;font-size:11px">Tiered pricing · client compares side-by-side</div>
+
+    <div class="section-hd">
+      <span class="label">Site prep</span>
+      <span class="tabular" style="font-size:11px;color:#4A5651">$18,400</span>
+    </div>
+    <div class="line">
+      <div><div class="line-desc"><span class="hs-mark">4</span>Demolition · existing patio</div><div class="line-detail">Break out 720 sf concrete, haul off · 3 days</div></div>
+      <div class="line-qty">720 sf</div>
+      <div class="line-total">$8,640</div>
+    </div>
+    <div class="line">
+      <div><div class="line-desc">Excavation + base prep</div><div class="line-detail">6" recompacted 3/4 minus, geotextile</div></div>
+      <div class="line-qty">720 sf</div>
+      <div class="line-total">$9,760</div>
+    </div>
+
+    <div class="section-hd">
+      <span class="label">Hardscape</span>
+      <span class="tabular" style="font-size:11px;color:#4A5651">$62,300</span>
+    </div>
+    <div class="line">
+      <div><div class="line-desc"><span class="hs-mark">1</span>Patio pavers · Techo-Bloc Blu 60</div><div class="line-detail">Slate grey · client selection pending</div></div>
+      <div class="line-qty">720 sf</div>
+      <div class="line-total">$41,400</div>
+    </div>
+    <div class="line">
+      <div><div class="line-desc"><span class="hs-mark">3</span>Seat wall · veneer face</div><div class="line-detail">18" high · 32 lf · integrated LED cove</div></div>
+      <div class="line-qty">32 lf</div>
+      <div class="line-total">$14,600</div>
+    </div>
+    <div class="line">
+      <div><div class="line-desc"><span class="hs-mark">5</span>Fire pit · gas hookup</div><div class="line-detail">36" round · lava rock · thermocouple</div></div>
+      <div class="line-qty">1 ea</div>
+      <div class="line-total">$6,300</div>
+    </div>
+
+    <div class="section-hd">
+      <span class="label">Outdoor kitchen</span>
+      <span class="tabular" style="font-size:11px;color:#4A5651">$44,100</span>
+    </div>
+    <div class="line">
+      <div><div class="line-desc"><span class="hs-mark">2</span>Kitchen island · L-shape 12'</div><div class="line-detail">Techo-Bloc veneer · granite counter</div></div>
+      <div class="line-qty">1 ea</div>
+      <div class="line-total">$28,400</div>
+    </div>
+    <div class="line">
+      <div><div class="line-desc">Built-in grill · Lynx L36ATR</div><div class="line-detail">36" all-trident burners · rotisserie</div></div>
+      <div class="line-qty">1 ea</div>
+      <div class="line-total">$8,900</div>
+    </div>
+    <div class="line">
+      <div><div class="line-desc">Beverage center · 24" undercounter</div><div class="line-detail">True dual-zone · client upgrade</div></div>
+      <div class="line-qty">1 ea</div>
+      <div class="line-total">$6,800</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="totals">
+      <div style="font-size:10px;color:#A5B8AE;letter-spacing:0.1em;text-transform:uppercase">Subtotal</div>
+      <div class="tabular" style="font-size:22px">$124,800</div>
+      <div style="font-size:10px;color:#A5B8AE;margin-top:2px">Margin 34% · target 32%</div>
+    </div>
+    <button style="background:#C86B3E;border:0;color:#FBFAF6;padding:10px 14px;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase">Add line</button>
+  </div>
+
+  <div class="tabbar">
+    <div class="tab"><span>Today</span></div>
+    <div class="tab active"><span>Projects</span><div class="tab-dot"></div></div>
+    <div class="tab"><span>Money</span></div>
+    <div class="tab"><span>People</span></div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

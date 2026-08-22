@@ -1,0 +1,336 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#FBFAF6;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .page{width:1400px;padding:64px 72px;background:#FBFAF6;box-sizing:border-box}
+    .display{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-0.01em;line-height:1}
+    .display em{font-style:italic;color:#1B3A2F}
+    .heading{font-family:'Inter',sans-serif;font-weight:700;letter-spacing:-0.02em}
+    .label{font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:13px;color:#4A5651;line-height:1.5}
+    .tabular{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+    .section{margin-top:64px;padding-top:32px;border-top:1px solid #DDD6C7}
+    .section-hd{margin-bottom:32px}
+    .section-eyebrow{font-weight:600;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#4A5651;margin-bottom:8px}
+    .section-title{font-family:'Instrument Serif',serif;font-weight:400;font-size:52px;letter-spacing:-0.01em;line-height:1}
+    .grid{display:grid;gap:16px}
+    .swatch{border-radius:12px;padding:16px;height:120px;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid rgba(15,19,16,0.06)}
+    .sw-code{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0}
+    .principle{background:#FFFFFF;border-radius:16px;padding:24px;border:1px solid #E5E1D8}
+    .principle .num{font-family:'Instrument Serif',serif;font-size:44px;color:#C86B3E;line-height:1;margin-bottom:12px;font-style:italic}
+    .principle .head{font-family:'Inter',sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.02em;line-height:1.2;margin-bottom:8px}
+    /* Density comparison */
+    .comp-lane{background:#FFFFFF;border-radius:16px;padding:24px;border:1px solid #E5E1D8}
+    .comp-lane.dense{background:#EFEAE0}
+    .comp-lane .lane-hd{font-family:'Instrument Serif',serif;font-size:28px;margin-bottom:6px}
+    .comp-lane .lane-sub{font-size:12px;color:#4A5651;margin-bottom:20px}
+    .demo-btn-primary{padding:18px;background:#1B3A2F;color:#FBFAF6;border:0;border-radius:12px;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;width:100%;margin-bottom:8px}
+    .demo-btn-dense{padding:10px 14px;background:#1B3A2F;color:#FBFAF6;border:0;border-radius:6px;font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;width:100%;margin-bottom:6px}
+    .demo-card-airy{background:#FFFFFF;border:1px solid #E5E1D8;border-radius:16px;padding:24px}
+    .demo-card-dense{background:#FBFAF6;border:1px solid #E0DBCC;border-radius:10px;padding:12px 14px}
+    .type-spec{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid #E5E1D8;align-items:baseline}
+    .type-spec:last-child{border-bottom:0}
+    .type-meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#4A5651;line-height:1.6}
+    /* Hotspot demo */
+    .hs-demo{aspect-ratio:16/10;background:linear-gradient(180deg,#7A968C,#4A6B6B 40%,#5C6B4A 40.1%,#3D4A2E);border-radius:12px;position:relative;overflow:hidden}
+    .hs-demo::before{content:'';position:absolute;top:22%;left:20%;right:20%;bottom:32%;background:linear-gradient(180deg,rgba(200,107,62,0.35),rgba(122,108,85,0.6));border-radius:4px}
+    .hs{position:absolute;transform:translate(-50%,-50%);border-radius:50%;background:#C86B3E;border:3px solid #FBFAF6;color:#FBFAF6;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:700;box-shadow:0 4px 16px rgba(200,107,62,0.5)}
+    .comp-label{font-family:'Inter',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#4A5651;margin-bottom:12px;display:block}
+    .row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+    /* Wordmark options */
+    .wm-tile{background:#FFFFFF;border-radius:16px;padding:32px;border:1px solid #E5E1D8;text-align:center}
+    .wm-tile.picked{background:#1B3A2F;color:#FBFAF6;border-color:#1B3A2F}
+    .wm{font-family:'Instrument Serif',serif;font-size:44px;letter-spacing:-0.02em;line-height:1}
+    .wm-alt{font-family:'IBM Plex Mono',monospace;font-size:32px;font-weight:500;letter-spacing:-0.03em;line-height:1}
+    .wm-alt2{font-family:'Inter',sans-serif;font-weight:800;font-size:32px;letter-spacing:-0.05em;line-height:1}
+  </style>
+</helmet>
+<div class="page">
+
+  <!-- Header -->
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px">
+    <div>
+      <div class="label" style="margin-bottom:16px">Design system · v0.1 · Apr 2026</div>
+      <div class="display" style="font-size:96px">Foundry.</div>
+      <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:26px;letter-spacing:-0.01em;margin-top:12px;max-width:720px;line-height:1.25;color:#1B3A2F">
+        A shared project workspace where the contractor and the homeowner meet around the render.
+      </div>
+      <div class="meta" style="margin-top:12px;max-width:640px">
+        Two people, one project, one source of truth. Two density modes on one token set — a dense utility interface for the person who opens it 30 times a day, an editorial surface for the person who opens it six times total.
+      </div>
+    </div>
+    <div style="width:120px;height:120px;background:#1B3A2F;border-radius:8px;display:flex;align-items:center;justify-content:center">
+      <div class="display" style="font-size:64px;color:#FBFAF6">F</div>
+    </div>
+  </div>
+
+  <!-- Brand principles -->
+  <div class="section">
+    <div class="section-hd">
+      <div class="section-eyebrow">Brand</div>
+      <div class="section-title">Six things we won't move on.</div>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+      <div class="principle">
+        <div class="num">01</div>
+        <div class="head">The render is the shared object</div>
+        <div class="meta">Both people point at the same image from opposite sides. Everything else is scaffolding around that.</div>
+      </div>
+      <div class="principle">
+        <div class="num">02</div>
+        <div class="head">Two densities, one token set</div>
+        <div class="meta">Contractor UI is dense, utilitarian, thumb-reachable, sunlight-legible. Client UI is spacious, editorial, image-led. Do not fork the system.</div>
+      </div>
+      <div class="principle">
+        <div class="num">03</div>
+        <div class="head">Hotspots are the signature</div>
+        <div class="meta">Tap a zone on a render, the scope and price rise. Spend the animation budget here. Keep everything else quiet.</div>
+      </div>
+      <div class="principle">
+        <div class="num">04</div>
+        <div class="head">Money is always tabular</div>
+        <div class="meta">Every dollar figure sets in IBM Plex Mono at tabular-nums. Non-negotiable — this product is about trust.</div>
+      </div>
+      <div class="principle">
+        <div class="num">05</div>
+        <div class="head">Copper is the CTA voice</div>
+        <div class="meta">One accent color, used for exactly one thing per surface: what needs to happen next. Not decoration.</div>
+      </div>
+      <div class="principle">
+        <div class="num">06</div>
+        <div class="head">We are not a design tool</div>
+        <div class="meta">We never generate renders. Contractors upload from VizTerra, SketchUp, Lumion. Our job starts where theirs stops.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Two densities -->
+  <div class="section">
+    <div class="section-hd">
+      <div class="section-eyebrow">Density modes</div>
+      <div class="section-title">Same tokens, <em>opposite pace.</em></div>
+    </div>
+
+    <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+      <div class="comp-lane">
+        <div class="lane-hd">Client · editorial</div>
+        <div class="lane-sub">Full-bleed, generous whitespace, one clear action. Opens six times, every open sells.</div>
+        <div class="demo-card-airy">
+          <div class="label">Waiting on you</div>
+          <div class="display" style="font-size:24px;margin-top:6px">Pick your <em>patio pavers.</em></div>
+          <div class="meta" style="margin-top:6px">3 options · deadline Friday</div>
+        </div>
+        <button class="demo-btn-primary" style="margin-top:16px">Explore the design</button>
+        <div class="meta" style="font-size:11px;font-style:italic;text-align:center">Pad 24, gap 16, one action.</div>
+      </div>
+
+      <div class="comp-lane dense">
+        <div class="lane-hd" style="font-family:'Inter',sans-serif;font-weight:700">Contractor · utility</div>
+        <div class="lane-sub">Dense rows, high contrast, thumb-reachable, tabular money. Opens 30 times, everything matters.</div>
+        <div class="demo-card-dense" style="margin-bottom:6px">
+          <div style="display:flex;justify-content:space-between"><div><div style="font-weight:600;font-size:13px">Cotter · paver selection</div><div style="font-size:11px;color:#4A5651">3 options · $2,400 impact · 4d</div></div><span class="tabular" style="font-size:12px;color:#C86B3E">4d</span></div>
+        </div>
+        <div class="demo-card-dense" style="margin-bottom:6px">
+          <div style="display:flex;justify-content:space-between"><div><div style="font-weight:600;font-size:13px">Vega · CO #003</div><div style="font-size:11px;color:#4A5651">$4,800 · signature pending</div></div><span class="tabular" style="font-size:12px;color:#C86B3E">2d</span></div>
+        </div>
+        <div class="demo-card-dense">
+          <div style="display:flex;justify-content:space-between"><div><div style="font-weight:600;font-size:13px">Harlan · deposit</div><div style="font-size:11px;color:#4A5651">$62,500 · signed</div></div><span class="tabular" style="font-size:12px;color:#C86B3E">1d</span></div>
+        </div>
+        <button class="demo-btn-dense" style="margin-top:8px">Nudge all</button>
+        <div class="meta" style="font-size:11px;font-style:italic;text-align:center">Pad 14, gap 6, every affordance in view.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Color -->
+  <div class="section">
+    <div class="section-hd">
+      <div class="section-eyebrow">Palette · earthy, grounded, outdoor-construction</div>
+      <div class="section-title">Color.</div>
+    </div>
+
+    <div style="margin-bottom:32px">
+      <span class="comp-label">Core</span>
+      <div class="grid" style="grid-template-columns:repeat(6,minmax(0,1fr))">
+        <div class="swatch" style="background:#1B3A2F;color:#FBFAF6"><div style="font-weight:600;font-size:11px">Pine · brand</div><div class="sw-code">#1B3A2F · --pine</div></div>
+        <div class="swatch" style="background:#C86B3E;color:#FBFAF6"><div style="font-weight:600;font-size:11px">Copper · CTA</div><div class="sw-code">#C86B3E · --copper</div></div>
+        <div class="swatch" style="background:#FBFAF6"><div style="font-weight:600;font-size:11px">Paper · client bg</div><div class="sw-code">#FBFAF6 · --paper</div></div>
+        <div class="swatch" style="background:#EFEAE0"><div style="font-weight:600;font-size:11px">Bone · contractor bg</div><div class="sw-code">#EFEAE0 · --bone</div></div>
+        <div class="swatch" style="background:#0F1310;color:#FBFAF6"><div style="font-weight:600;font-size:11px">Ink · text</div><div class="sw-code">#0F1310 · --ink</div></div>
+        <div class="swatch" style="background:#4A5651;color:#FBFAF6"><div style="font-weight:600;font-size:11px">Slate · meta</div><div class="sw-code">#4A5651 · --slate</div></div>
+      </div>
+    </div>
+
+    <div>
+      <span class="comp-label">Semantic</span>
+      <div class="grid" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+        <div class="swatch" style="background:#4A7A50;color:#FBFAF6"><div style="font-weight:600;font-size:11px">Moss · success</div><div class="sw-code" style="color:rgba(255,255,255,0.85)">#4A7A50</div></div>
+        <div class="swatch" style="background:#B54F30;color:#FBFAF6"><div style="font-weight:600;font-size:11px">Clay · warning</div><div class="sw-code" style="color:rgba(255,255,255,0.85)">#B54F30</div></div>
+        <div class="swatch" style="background:#7A9DB0;color:#FBFAF6"><div style="font-weight:600;font-size:11px">Sky · info</div><div class="sw-code" style="color:rgba(255,255,255,0.85)">#7A9DB0</div></div>
+        <div class="swatch" style="background:#DDD6C7"><div style="font-weight:600;font-size:11px">Fog · dividers</div><div class="sw-code">#DDD6C7 · --fog</div></div>
+      </div>
+    </div>
+
+    <div class="meta" style="margin-top:20px;font-style:italic;max-width:640px">
+      Explicitly avoided: cream + serif + terracotta (the AI-design vacation-rental look), and near-black + acid accent (the AI-design startup look). Copper is warm and mineral, pine is established and outdoors, bone is concrete not cream.
+    </div>
+  </div>
+
+  <!-- Type -->
+  <div class="section">
+    <div class="section-hd">
+      <div class="section-eyebrow">Type · Instrument Serif · Inter · IBM Plex Mono</div>
+      <div class="section-title">Voice.</div>
+    </div>
+
+    <div style="margin-bottom:32px">
+      <span class="comp-label">Display · Instrument Serif — for client side hero moments</span>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Display XL · 96/1</div>
+      <div class="display" style="font-size:96px">Your <em>backyard.</em></div>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Display · 48/1</div>
+      <div class="display" style="font-size:48px">The Cotter backyard</div>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Display MD · 32/1.05</div>
+      <div class="display" style="font-size:32px">Concrete pour starts <em>Wednesday.</em></div>
+    </div>
+
+    <div style="margin:32px 0 8px">
+      <span class="comp-label">UI · Inter — both sides</span>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Heading · 22 · 700 · −0.02</div>
+      <div class="heading" style="font-size:22px">Ridgeline · patio + kitchen</div>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Body · 14 · 600</div>
+      <div style="font-size:14px;font-weight:600">Approve April milestone</div>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Meta · 13 · 500 · slate</div>
+      <div class="meta">Two days ahead of schedule. Rivera Concrete on site.</div>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Label · 11 · 600 · +0.14em UPPER</div>
+      <div class="label">Awaiting client</div>
+    </div>
+
+    <div style="margin:32px 0 8px">
+      <span class="comp-label">Mono · IBM Plex Mono — every money value, timers, IDs</span>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Tabular XL · 32</div>
+      <div class="tabular" style="font-size:32px">$142,800</div>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Tabular · 14</div>
+      <div class="tabular" style="font-size:14px">$4,650.00 · MSA 049 · 20.12 MXN</div>
+    </div>
+  </div>
+
+  <!-- Signature — hotspot -->
+  <div class="section">
+    <div class="section-hd">
+      <div class="section-eyebrow">Signature component</div>
+      <div class="section-title">Hotspot pin.</div>
+    </div>
+
+    <div class="grid" style="grid-template-columns:1.4fr 1fr">
+      <div>
+        <div class="hs-demo">
+          <div class="hs" style="left:32%;top:42%;width:32px;height:32px;font-size:13px">1</div>
+          <div class="hs" style="left:58%;top:38%;width:32px;height:32px;font-size:13px">2</div>
+          <div class="hs" style="left:72%;top:52%;width:32px;height:32px;font-size:13px">3</div>
+        </div>
+      </div>
+      <div>
+        <div class="meta" style="line-height:1.6">
+          Contractor drops pins on an uploaded render, links each to line items. Client taps a pin and the scope and price rise into a bottom sheet.
+        </div>
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:14px">
+          <div><span class="label">Sizes</span><div class="row" style="margin-top:6px"><div class="hs" style="position:relative;width:20px;height:20px;font-size:9px;transform:none">1</div><div class="hs" style="position:relative;width:24px;height:24px;font-size:11px;transform:none">1</div><div class="hs" style="position:relative;width:32px;height:32px;font-size:13px;transform:none">1</div><span class="type-meta">contractor 24 · client 32</span></div></div>
+          <div><span class="label">Coordinates</span><div class="tabular" style="font-size:13px;margin-top:6px">{ x: 0.42, y: 0.61 }</div><div class="meta" style="font-size:12px;margin-top:2px">Always percentages, never pixels.</div></div>
+          <div><span class="label">Touch target</span><div class="type-meta" style="margin-top:6px">44px minimum (invisible), 32px visible dot</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wordmark options -->
+  <div class="section">
+    <div class="section-hd">
+      <div class="section-eyebrow">Naming · decision still open</div>
+      <div class="section-title">Working brand.</div>
+    </div>
+    <div class="meta" style="margin-bottom:24px;max-width:720px">
+      <strong>ProposalCraft</strong> describes phase one of three; by the time the build loop ships, the name will feel small. The product is now a project workspace, not an estimating tool. <em>Foundry</em> is our working brand — it evokes craft and forming and doesn't box in what the product becomes. Alternatives worth considering below. Decide before you buy a domain and build brand assets.
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+      <div class="wm-tile picked">
+        <div class="wm">Foundry</div>
+        <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;margin-top:16px;color:#7BB0A0">Current pick</div>
+      </div>
+      <div class="wm-tile">
+        <div class="wm">Rendered</div>
+        <div class="type-meta" style="margin-top:16px">Direct: the render is the thing.</div>
+      </div>
+      <div class="wm-tile">
+        <div class="wm-alt">basework</div>
+        <div class="type-meta" style="margin-top:16px">Grounded, construction-y.</div>
+      </div>
+      <div class="wm-tile">
+        <div class="wm-alt2">Level.</div>
+        <div class="type-meta" style="margin-top:16px">Construction verb + "level with you."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copy voice -->
+  <div class="section">
+    <div class="section-hd">
+      <div class="section-eyebrow">Copy voice</div>
+      <div class="section-title">How we sound.</div>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+      <div class="principle">
+        <div class="head" style="color:#4A7A50">✓ Say this</div>
+        <div class="meta" style="line-height:1.6">
+          "Concrete pour starts Wednesday."<br>
+          "Pick your patio pavers."<br>
+          "Two days ahead of schedule."<br>
+          "Marcus suggests a cedar pergola."<br>
+          "Send estimate."
+        </div>
+      </div>
+      <div class="principle">
+        <div class="head" style="color:#B54F30">✗ Not this</div>
+        <div class="meta" style="line-height:1.6">
+          "Milestone deliverable Q2 pending."<br>
+          "Please make your paver selection."<br>
+          "Project on schedule per plan."<br>
+          "Change order suggestion available."<br>
+          "Submit quote for review."
+        </div>
+      </div>
+    </div>
+    <div class="meta" style="margin-top:20px;max-width:720px;font-style:italic">
+      Active voice. A button says exactly what happens — "Send estimate," not "Submit." The action keeps its name through the whole flow. Errors say what happened and how to fix it. Empty states are invitations, not decoration.
+    </div>
+  </div>
+
+  <div style="margin-top:64px;padding-top:32px;border-top:1px solid #DDD6C7;display:flex;justify-content:space-between;align-items:center">
+    <div class="meta">Design system · Foundry · living document · everything editable.</div>
+    <div class="label">© 2026</div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

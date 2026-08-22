@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#0F1310;color:#EFEAE0;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#0F1310;overflow:hidden;display:flex;flex-direction:column;position:relative}
+    .top{padding:56px 16px 8px;display:flex;align-items:center;justify-content:space-between}
+    .heading{font-family:'Inter',sans-serif;font-weight:700;letter-spacing:-0.02em}
+    .label{font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase}
+    .meta{font-weight:500;font-size:12px}
+    .tabular{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+    .btn-back{border:0;background:transparent;padding:0;display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:#A5B8AE}
+    .render-wrap{aspect-ratio:16/10;background:linear-gradient(180deg,#7A968C 0%,#4A6B6B 40%,#5C6B4A 40.1%,#3D4A2E 100%);position:relative;overflow:hidden}
+    .render-wrap::before{content:'';position:absolute;top:20%;left:20%;right:20%;bottom:35%;background:linear-gradient(180deg,rgba(200,107,62,0.3),rgba(122,108,85,0.6));border-radius:4px}
+    .hs{position:absolute;transform:translate(-50%,-50%);width:24px;height:24px;border-radius:50%;background:#C86B3E;border:2px solid #FBFAF6;box-shadow:0 2px 8px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;color:#FBFAF6;font-size:10px;font-weight:700;font-family:'IBM Plex Mono',monospace;cursor:pointer}
+    .hs.selected{transform:translate(-50%,-50%) scale(1.3);box-shadow:0 0 0 6px rgba(200,107,62,0.3),0 2px 8px rgba(0,0,0,0.4)}
+    .hs.crosshair{background:transparent;border:2px dashed #FBFAF6;color:transparent}
+    .toolbar{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(15,19,16,0.85);backdrop-filter:blur(12px);border:1px solid #2A2E30;padding:6px;border-radius:999px;display:flex;gap:4px}
+    .tool{width:36px;height:36px;border-radius:999px;background:transparent;border:0;color:#A5B8AE;display:flex;align-items:center;justify-content:center;cursor:pointer}
+    .tool.active{background:#C86B3E;color:#FBFAF6}
+    .panel{flex:1;background:#1A2020;border-top:1px solid #2A2E30;padding:14px 16px 96px;overflow:hidden;display:flex;flex-direction:column;gap:10px}
+    .panel-hd{display:flex;align-items:center;justify-content:space-between}
+    .pin-row{display:grid;grid-template-columns:32px 1fr auto;gap:10px;align-items:center;padding:10px;background:#0F1310;border:1px solid #2A2E30;border-radius:8px}
+    .pin-row.selected{border-color:#C86B3E;background:#1F1512}
+    .pin-num{width:26px;height:26px;border-radius:50%;background:#C86B3E;color:#FBFAF6;font-size:11px;font-weight:700;font-family:'IBM Plex Mono',monospace;display:flex;align-items:center;justify-content:center}
+    .pin-title{font-size:13px;font-weight:600;color:#EFEAE0}
+    .pin-sub{font-size:11px;color:#7A8480;margin-top:2px}
+    .pin-price{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;text-align:right}
+    .save-chip{position:absolute;top:56px;right:16px;background:rgba(74,122,80,0.2);color:#7BBB82;padding:4px 8px;border-radius:6px;font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:4px}
+    .unmapped-warn{background:#3A2418;color:#F5C89A;padding:8px 12px;border-radius:8px;border:1px solid #5A3820;font-size:12px;display:flex;align-items:center;justify-content:space-between}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="top">
+    <button class="btn-back"><svg width="10" height="12" viewBox="0 0 8 14"><path d="M7 1L1 7l6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>Cotter · patio</button>
+    <div class="row" style="display:flex;gap:6px;align-items:center">
+      <button style="background:transparent;border:1px solid #2A2E30;color:#EFEAE0;padding:6px 10px;border-radius:6px;font-size:11px;font-weight:600">v3 ▾</button>
+    </div>
+  </div>
+  <div class="save-chip">● Saved 12s ago</div>
+
+  <div class="render-wrap">
+    <!-- Pin #1 selected -->
+    <div class="hs selected" style="left:32%;top:52%">1</div>
+    <div class="hs" style="left:58%;top:48%">2</div>
+    <div class="hs" style="left:72%;top:62%">3</div>
+    <div class="hs" style="left:24%;top:72%">4</div>
+    <div class="hs" style="left:50%;top:78%">5</div>
+    <!-- Crosshair (add mode) -->
+    <div class="hs crosshair" style="left:78%;top:80%"></div>
+
+    <div class="toolbar">
+      <div class="tool active" title="Add pin">
+        <svg width="18" height="18" viewBox="0 0 22 22"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M11 8v6M8 11h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div class="tool" title="Move">
+        <svg width="18" height="18" viewBox="0 0 22 22"><path d="M11 3v16M3 11h16M8 6l3-3 3 3M8 16l3 3 3-3M6 8l-3 3 3 3M16 8l3 3-3 3" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="tool" title="Delete">
+        <svg width="18" height="18" viewBox="0 0 22 22"><path d="M6 6l10 10M16 6L6 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-hd">
+      <div>
+        <div class="label" style="color:#A5B8AE">Pins · 5 placed · $92,700 mapped</div>
+        <div class="heading" style="font-size:16px;margin-top:2px">Hotspots</div>
+      </div>
+      <button style="background:#C86B3E;border:0;color:#FBFAF6;padding:8px 12px;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase">+ Pin</button>
+    </div>
+
+    <div class="unmapped-warn">
+      <span>2 line items still unmapped · $32,100</span>
+      <span style="text-transform:uppercase;letter-spacing:0.04em;font-size:10px;font-weight:700">Fix</span>
+    </div>
+
+    <div class="pin-row selected">
+      <div class="pin-num">1</div>
+      <div>
+        <div class="pin-title">Patio pavers — Techo-Bloc Blu 60</div>
+        <div class="pin-sub">1 item linked · pending client pick</div>
+      </div>
+      <div class="pin-price">$41,400</div>
+    </div>
+    <div class="pin-row">
+      <div class="pin-num">2</div>
+      <div>
+        <div class="pin-title">Outdoor kitchen — 12' L-shape</div>
+        <div class="pin-sub">3 items linked · grill, counter, veneer</div>
+      </div>
+      <div class="pin-price">$44,100</div>
+    </div>
+    <div class="pin-row">
+      <div class="pin-num">3</div>
+      <div>
+        <div class="pin-title">Seat wall + LED cove</div>
+        <div class="pin-sub">1 item linked · 32 lf</div>
+      </div>
+      <div class="pin-price">$14,600</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

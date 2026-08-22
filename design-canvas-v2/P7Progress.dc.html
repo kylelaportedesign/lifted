@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#FBFAF6;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#FBFAF6;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:56px 24px 40px;overflow:hidden}
+    .display{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-0.01em;line-height:1.05}
+    .label{font-weight:600;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:13px;color:#4A5651;line-height:1.55}
+    .btn-back{border:0;background:transparent;padding:0;display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:#4A5651;margin-bottom:8px}
+    /* Before/after slider */
+    .slider{position:relative;aspect-ratio:16/10;border-radius:16px;overflow:hidden;margin-top:20px;box-shadow:0 4px 20px rgba(15,19,16,0.08)}
+    .before,.after{position:absolute;inset:0}
+    .before{background:linear-gradient(180deg,#7A968C 0%,#4A6B6B 40%,#5C6B4A 40.1%,#3D4A2E 100%)}
+    .before::before{content:'';position:absolute;top:20%;left:20%;right:20%;bottom:35%;background:linear-gradient(180deg,rgba(200,107,62,0.35),rgba(122,108,85,0.6));border-radius:4px}
+    .after{background:linear-gradient(180deg,#B5B0A2 0%,#8A8578 40%,#6B6660 40.1%,#4A453D 100%);clip-path:inset(0 55% 0 0)}
+    .after::before{content:'';position:absolute;top:35%;left:8%;right:20%;bottom:15%;background:linear-gradient(180deg,#4A4A48,#2A2A28);border-radius:2px}
+    .div-handle{position:absolute;top:0;bottom:0;left:45%;width:3px;background:#FBFAF6;box-shadow:0 0 12px rgba(0,0,0,0.4)}
+    .div-knob{position:absolute;top:50%;left:45%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#FBFAF6;box-shadow:0 4px 12px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;font-size:16px;color:#0F1310}
+    .slider-label{position:absolute;top:12px;padding:4px 10px;border-radius:4px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#FBFAF6;background:rgba(15,19,16,0.6);backdrop-filter:blur(6px)}
+    .lbl-render{left:12px}.lbl-today{right:12px}
+    .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
+    .thumb{aspect-ratio:1;border-radius:8px;background:linear-gradient(135deg,#8A7562,#4A3D2E)}
+    .thumb.render{background:linear-gradient(135deg,#7A968C,#3D4A2E)}
+    .thumb.active{outline:2px solid #C86B3E;outline-offset:2px}
+    .phase-tabs{display:flex;gap:6px;overflow-x:auto;margin-top:20px;padding-bottom:6px}
+    .pt{padding:6px 12px;border-radius:999px;background:#F2EFE7;font-size:12px;font-weight:600;color:#4A5651;flex-shrink:0}
+    .pt.active{background:#1B3A2F;color:#FBFAF6}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <button class="btn-back">◃ Project</button>
+    <div class="label">Progress · phase 3</div>
+    <div class="display" style="font-size:32px;margin-top:8px">Your render <em>becoming real.</em></div>
+    <div class="meta" style="margin-top:6px">Drag the divider to compare. Concrete pour, day 24.</div>
+
+    <div class="slider">
+      <div class="after"></div>
+      <div class="before"></div>
+      <div style="position:absolute;inset:0;clip-path:inset(0 55% 0 0);pointer-events:none">
+        <div class="after"></div>
+      </div>
+      <!-- proper before/after implemented via clip on top layer -->
+      <span class="slider-label lbl-render">Render v3</span>
+      <span class="slider-label lbl-today">Today · Apr 22</span>
+      <div class="div-handle"></div>
+      <div class="div-knob">⇔</div>
+    </div>
+
+    <div class="phase-tabs">
+      <div class="pt">Demo</div>
+      <div class="pt">Excav</div>
+      <div class="pt active">Concrete</div>
+      <div class="pt">Kitchen</div>
+      <div class="pt">Finish</div>
+    </div>
+
+    <div class="thumbs">
+      <div class="thumb render"></div>
+      <div class="thumb active"></div>
+      <div class="thumb" style="background:linear-gradient(135deg,#6B6660,#3D3D38)"></div>
+      <div class="thumb" style="background:linear-gradient(135deg,#5C6B4A,#2E3D24)"></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

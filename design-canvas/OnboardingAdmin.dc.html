@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#F2F0E8;color:#0A0A0A;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#F2F0E8;overflow:hidden;display:flex;flex-direction:column;padding:64px 20px 24px}
+    .display-md{font-family:'Archivo','Manrope',system-ui,sans-serif;font-weight:800;letter-spacing:-0.03em;line-height:0.95;font-size:36px}
+    .label-muted{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#7A7A70}
+    .meta{font-weight:500;font-size:13px;color:#7A7A70;letter-spacing:-0.005em}
+    .back{border:0;background:rgba(10,10,10,0.05);border-radius:18px;padding:8px 12px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;align-self:flex-start}
+    .card{background:#FAF9F2;border-radius:16px;padding:14px;border:0.5px solid rgba(10,10,10,0.04)}
+    .card.dim{opacity:0.5;transform:scale(0.98)}
+  </style>
+</helmet>
+<div class="screen">
+  <button class="back" style="margin-bottom:16px">
+    <svg width="12" height="14" viewBox="0 0 8 14"><path d="M7 1L1 7l6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Today
+  </button>
+  <div style="height:2px;background:#E8E6DF;margin-bottom:24px;position:relative">
+    <div style="position:absolute;left:0;top:0;height:100%;width:60%;background:#F5F500"></div>
+  </div>
+
+  <div class="display-md">And about you?</div>
+  <div class="meta" style="margin-top:8px">Account owner details for KYC.</div>
+
+  <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px">
+    <div class="card">
+      <div class="label-muted" style="margin-bottom:6px">Full legal name</div>
+      <div style="font-size:18px;font-weight:600;letter-spacing:-0.01em">Adriana Whitfield</div>
+    </div>
+    <div class="card dim">
+      <div class="label-muted" style="margin-bottom:6px">Email</div>
+      <div style="font-size:18px;font-weight:600;letter-spacing:-0.01em">adriana@construct.co</div>
+    </div>
+    <div class="card dim">
+      <div class="label-muted" style="margin-bottom:6px">Phone</div>
+      <div style="font-size:18px;font-weight:600;letter-spacing:-0.01em">+1 (415) 555-0143</div>
+    </div>
+    <div class="card dim">
+      <div class="label-muted" style="margin-bottom:6px">Role</div>
+      <div style="font-size:18px;font-weight:600;letter-spacing:-0.01em">COO</div>
+    </div>
+  </div>
+
+  <div style="flex:1"></div>
+  <button style="width:100%;height:56px;border-radius:28px;border:0;background:#0A0A0A;color:#F2F0E8;font-weight:700;font-size:14px;letter-spacing:0.04em;text-transform:uppercase">Continue</button>
+</div>
+</x-dc>
+</body>
+</html>

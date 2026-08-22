@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#EFEAE0;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#EFEAE0;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:56px 16px 96px;overflow:hidden}
+    .heading{font-family:'Inter',sans-serif;font-weight:700;letter-spacing:-0.02em}
+    .label{font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:13px;color:#4A5651}
+    .tabular{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+    .card{background:#FBFAF6;border-radius:10px;padding:12px 14px;border:1px solid #E0DBCC}
+    .row{display:flex;align-items:center;gap:10px}
+    .between{justify-content:space-between}
+    .filters{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;margin:0 -16px;padding-left:16px}
+    .filter{flex-shrink:0;padding:6px 12px;border-radius:999px;background:#FBFAF6;border:1px solid #DDD6C7;font-size:12px;font-weight:600;color:#4A5651}
+    .filter.active{background:#1B3A2F;color:#EFEAE0;border-color:#1B3A2F}
+    .stage-active{color:#C86B3E}
+    .stage-lead{color:#7A6C55}
+    .stage-est{color:#4A5651}
+    .stage-sign{color:#B54F30}
+    .stage-done{color:#4A7A50}
+    .thumb{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,#7A968C,#4A5651);flex-shrink:0;overflow:hidden;position:relative}
+    .thumb-pool{background:linear-gradient(135deg,#4A6B7A,#2E4A5B)}
+    .thumb-kitchen{background:linear-gradient(135deg,#7A6C55,#4A3D2E)}
+    .thumb-deck{background:linear-gradient(135deg,#5C6B4A,#3D4A2E)}
+    .tabbar{position:absolute;bottom:0;left:0;right:0;height:76px;background:#1B3A2F;display:flex;justify-content:space-around;align-items:flex-start;padding:10px 8px 0}
+    .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#7A968C}
+    .tab.active{color:#EFEAE0}
+    .tab-dot{width:20px;height:2px;background:transparent;border-radius:2px;margin-top:2px}
+    .tab.active .tab-dot{background:#C86B3E}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <div class="row between" style="margin-bottom:12px">
+      <div class="heading" style="font-size:22px">Projects</div>
+      <button style="height:34px;padding:0 14px;border-radius:8px;border:0;background:#1B3A2F;color:#EFEAE0;font-size:12px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase">+ New</button>
+    </div>
+
+    <div class="filters">
+      <div class="filter active">All · 14</div>
+      <div class="filter">Lead · 2</div>
+      <div class="filter">Estimating · 3</div>
+      <div class="filter">Awaiting sig · 1</div>
+      <div class="filter">Active · 6</div>
+      <div class="filter">Complete · 2</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <div class="card">
+        <div class="row" style="gap:12px">
+          <div class="thumb thumb-pool"></div>
+          <div style="flex:1;min-width:0">
+            <div class="heading" style="font-size:14px">Cotter · patio + kitchen</div>
+            <div class="meta" style="font-size:11px;margin-top:2px">Ridgeline · 24 Ridgeline Rd</div>
+            <div class="row between" style="margin-top:6px">
+              <span class="label stage-active" style="font-size:9px">● Active · Ph 3/6</span>
+              <span class="tabular" style="font-size:12px">$142,800</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="row" style="gap:12px">
+          <div class="thumb thumb-deck"></div>
+          <div style="flex:1;min-width:0">
+            <div class="heading" style="font-size:14px">Vega · pool deck</div>
+            <div class="meta" style="font-size:11px;margin-top:2px">Beacon · 8 Beacon Hill</div>
+            <div class="row between" style="margin-top:6px">
+              <span class="label stage-active" style="font-size:9px">● Active · Ph 2/5</span>
+              <span class="tabular" style="font-size:12px">$88,400</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="row" style="gap:12px">
+          <div class="thumb thumb-kitchen"></div>
+          <div style="flex:1;min-width:0">
+            <div class="heading" style="font-size:14px">Harlan · outdoor kitchen</div>
+            <div class="meta" style="font-size:11px;margin-top:2px">Cavendish · 12 Cavendish Ln</div>
+            <div class="row between" style="margin-top:6px">
+              <span class="label stage-sign" style="font-size:9px">● Awaiting sig</span>
+              <span class="tabular" style="font-size:12px">$62,500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="row" style="gap:12px">
+          <div class="thumb"></div>
+          <div style="flex:1;min-width:0">
+            <div class="heading" style="font-size:14px">Marino · courtyard</div>
+            <div class="meta" style="font-size:11px;margin-top:2px">Ashford · 44 Ashford Ave</div>
+            <div class="row between" style="margin-top:6px">
+              <span class="label stage-est" style="font-size:9px">● Estimating</span>
+              <span class="tabular" style="font-size:12px">est. $180k</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="row" style="gap:12px">
+          <div class="thumb thumb-kitchen"></div>
+          <div style="flex:1;min-width:0">
+            <div class="heading" style="font-size:14px">Delaney · fire pit terrace</div>
+            <div class="meta" style="font-size:11px;margin-top:2px">Hollow · 6 Hollow Rd</div>
+            <div class="row between" style="margin-top:6px">
+              <span class="label stage-lead" style="font-size:9px">● Lead · call scheduled</span>
+              <span class="tabular" style="font-size:12px" style="color:#A5A8A3">—</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="row" style="gap:12px">
+          <div class="thumb thumb-deck"></div>
+          <div style="flex:1;min-width:0">
+            <div class="heading" style="font-size:14px">Okonkwo · driveway + walls</div>
+            <div class="meta" style="font-size:11px;margin-top:2px">Millgate · 18 Millgate Dr</div>
+            <div class="row between" style="margin-top:6px">
+              <span class="label stage-done" style="font-size:9px">● Complete · Mar 12</span>
+              <span class="tabular" style="font-size:12px">$74,900</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabbar">
+    <div class="tab"><svg width="20" height="20" viewBox="0 0 22 22"><rect x="4" y="4" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="12" y="4" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="4" y="12" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="12" y="12" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg><span>Today</span><div class="tab-dot"></div></div>
+    <div class="tab active"><svg width="20" height="20" viewBox="0 0 22 22"><path d="M4 6h14M4 11h14M4 16h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Projects</span><div class="tab-dot"></div></div>
+    <div class="tab"><svg width="20" height="20" viewBox="0 0 22 22"><rect x="3" y="7" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M3 11h16" stroke="currentColor" stroke-width="1.5"/></svg><span>Money</span><div class="tab-dot"></div></div>
+    <div class="tab"><svg width="20" height="20" viewBox="0 0 22 22"><circle cx="11" cy="8" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M4 19c1-4 4-5 7-5s6 1 7 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg><span>People</span><div class="tab-dot"></div></div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

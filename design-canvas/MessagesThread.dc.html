@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#F2F0E8;color:#0A0A0A;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#F2F0E8;overflow:hidden;display:flex;flex-direction:column;position:relative}
+    .content{flex:1;padding:64px 20px 100px;overflow:hidden}
+    .label{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#0A0A0A}
+    .label-muted{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#7A7A70}
+    .meta{font-weight:500;font-size:13px;color:#7A7A70;letter-spacing:-0.005em}
+    .tabular{font-variant-numeric:tabular-nums}
+    .card-mist{background:#E8E6DF;border-radius:16px;padding:16px}
+    .row{display:flex;align-items:center;gap:12px}
+    .between{justify-content:space-between}
+    .avatar{width:56px;height:56px;border-radius:50%;background:#A39E85;color:#0A0A0A;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:700;font-size:18px;flex-shrink:0}
+    .back{border:0;background:rgba(10,10,10,0.05);border-radius:18px;padding:8px 12px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
+    .bubble{max-width:78%;padding:10px 14px;border-radius:18px;font-size:14px;line-height:1.4}
+    .b-them{background:#FAF9F2;color:#0A0A0A;border-bottom-left-radius:6px;align-self:flex-start}
+    .b-me{background:#0A0A0A;color:#F2F0E8;border-bottom-right-radius:6px;align-self:flex-end}
+    .compose{position:absolute;left:0;right:0;bottom:0;padding:14px;background:rgba(242,240,232,0.94);border-top:0.5px solid #E8E6DF;display:flex;align-items:center;gap:8px}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <button class="back" style="margin-bottom:16px">
+      <svg width="12" height="14" viewBox="0 0 8 14"><path d="M7 1L1 7l6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Inbox
+    </button>
+
+    <div class="row" style="margin-bottom:18px">
+      <div class="avatar">MC</div>
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <div class="meta">to Maya Chen</div>
+        <div style="font-weight:700;font-size:18px">Product Designer</div>
+      </div>
+    </div>
+
+    <!-- Pinned timesheet -->
+    <div class="card-mist" style="margin-bottom:20px">
+      <div class="row between">
+        <span class="label-muted">Pinned · Timesheet</span>
+        <span class="label tabular">$4,250.00</span>
+      </div>
+      <div style="font-weight:600;font-size:15px;margin-top:6px">Apr 15–19 · 38 hours</div>
+      <div class="row" style="gap:8px;margin-top:10px">
+        <button style="flex:1;height:36px;border:0;border-radius:18px;background:#0A0A0A;color:#F2F0E8;font-weight:600;font-size:12px;letter-spacing:0.04em;text-transform:uppercase">Approve</button>
+        <button style="flex:1;height:36px;border:1px solid rgba(10,10,10,0.1);border-radius:18px;background:transparent;color:#0A0A0A;font-weight:600;font-size:12px;letter-spacing:0.04em;text-transform:uppercase">Request changes</button>
+      </div>
+    </div>
+
+    <!-- Bubbles -->
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="bubble b-them">Hi Adriana — sent the timesheet. Long week on the new comps.</div>
+      <div class="bubble b-them">Let me know if anything looks off.</div>
+      <div style="text-align:center;padding:6px 0"><div class="label-muted" style="font-size:10px">You opened the timesheet · 11:42</div></div>
+      <div class="bubble b-me">Looks great. About to approve — quick q on the 19th, the 9.5h block.</div>
+      <div class="bubble b-them">Pairing with Priya on the export flow.</div>
+      <div class="bubble b-me">Perfect. Approving now.</div>
+    </div>
+  </div>
+
+  <div class="compose">
+    <button style="width:36px;height:36px;border:0;border-radius:18px;background:#E8E6DF">＋</button>
+    <div style="flex:1;height:36px;border-radius:18px;background:#FAF9F2;display:flex;align-items:center;padding:0 14px;color:#7A7A70;font-size:14px">Message Maya…</div>
+    <button style="width:36px;height:36px;border:0;border-radius:18px;background:#0A0A0A;color:#F2F0E8">↑</button>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

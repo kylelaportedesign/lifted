@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#EFEAE0;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#EFEAE0;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:56px 16px 96px;overflow:hidden}
+    .heading{font-weight:700;letter-spacing:-0.02em}
+    .label{font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:12px;color:#4A5651}
+    .tabular{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+    .card{background:#FBFAF6;border-radius:10px;padding:14px;border:1px solid #E0DBCC}
+    .row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}
+    .inv{padding:12px 14px;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;border-bottom:1px solid #E5E1D8;background:#FBFAF6}
+    .inv:first-child{border-radius:10px 10px 0 0}
+    .inv:last-child{border-bottom:0;border-radius:0 0 10px 10px}
+    .pill{padding:3px 8px;border-radius:999px;font-size:10px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+    .pill-paid{background:#D4E8D0;color:#2A5A32}
+    .pill-due{background:#F5E1B8;color:#7A5A18}
+    .pill-overdue{background:#F5C6B8;color:#7A2818}
+    .pill-sent{background:#E5E1D8;color:#4A5651}
+    .tabbar{position:absolute;bottom:0;left:0;right:0;height:76px;background:#1B3A2F;display:flex;justify-content:space-around;align-items:flex-start;padding:10px 8px 0}
+    .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#7A968C}
+    .tab.active{color:#EFEAE0}
+    .tab-dot{width:20px;height:2px;background:transparent;border-radius:2px;margin-top:2px}
+    .tab.active .tab-dot{background:#C86B3E}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <div class="row between" style="margin-bottom:12px">
+      <div><div class="heading" style="font-size:22px">Money</div><div class="meta">Stripe Connect · Chase ••4820</div></div>
+      <button style="height:32px;padding:0 12px;background:#1B3A2F;color:#EFEAE0;border:0;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase">+ Invoice</button>
+    </div>
+
+    <div class="card" style="background:#1B3A2F;color:#EFEAE0;border-color:#1B3A2F;margin-bottom:14px">
+      <div class="label" style="color:#A5B8AE">Outstanding · 30 days</div>
+      <div class="tabular" style="font-size:36px;margin-top:6px">$127,400</div>
+      <div class="row between" style="margin-top:10px">
+        <span style="font-size:12px;color:#A5B8AE">Overdue $18,200</span>
+        <span style="background:#C86B3E;padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase">Nudge 3</span>
+      </div>
+    </div>
+
+    <div class="label" style="padding:0 0 8px">Recent invoices</div>
+    <div style="border-radius:10px;border:1px solid #E0DBCC;overflow:hidden">
+      <div class="inv">
+        <div><div style="font-weight:600;font-size:13px">Cotter · draw #3</div><div class="meta" style="font-size:11px">Phase 3 · concrete complete</div></div>
+        <div class="tabular" style="font-size:13px">$28,400</div>
+        <span class="pill pill-paid">Paid</span>
+      </div>
+      <div class="inv">
+        <div><div style="font-weight:600;font-size:13px">Vega · CO #002</div><div class="meta" style="font-size:11px">Added retaining wall</div></div>
+        <div class="tabular" style="font-size:13px">$12,600</div>
+        <span class="pill pill-overdue">7d late</span>
+      </div>
+      <div class="inv">
+        <div><div style="font-weight:600;font-size:13px">Cotter · draw #4</div><div class="meta" style="font-size:11px">Due on paver install</div></div>
+        <div class="tabular" style="font-size:13px">$34,200</div>
+        <span class="pill pill-due">Due May 3</span>
+      </div>
+      <div class="inv">
+        <div><div style="font-weight:600;font-size:13px">Harlan · deposit</div><div class="meta" style="font-size:11px">On contract signature</div></div>
+        <div class="tabular" style="font-size:13px">$62,500</div>
+        <span class="pill pill-sent">Sent</span>
+      </div>
+      <div class="inv">
+        <div><div style="font-weight:600;font-size:13px">Okonkwo · final</div><div class="meta" style="font-size:11px">Punch list complete</div></div>
+        <div class="tabular" style="font-size:13px">$7,400</div>
+        <span class="pill pill-paid">Paid</span>
+      </div>
+    </div>
+  </div>
+  <div class="tabbar"><div class="tab"><span>Today</span></div><div class="tab"><span>Projects</span></div><div class="tab active"><span>Money</span><div class="tab-dot"></div></div><div class="tab"><span>People</span></div></div>
+</div>
+</x-dc>
+</body>
+</html>

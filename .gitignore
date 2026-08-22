@@ -9,3 +9,4 @@ dist
 
 # Seeded design-canvas output (regenerable from .dc.html sources)
 design-canvas/lifted-app-flows.html
+design-canvas-v2/foundry-workspace.html

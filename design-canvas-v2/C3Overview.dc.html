@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#EFEAE0;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#EFEAE0;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:56px 0 96px;overflow:hidden}
+    .heading{font-family:'Inter',sans-serif;font-weight:700;letter-spacing:-0.02em}
+    .label{font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:12px;color:#4A5651}
+    .tabular{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+    .row{display:flex;align-items:center;gap:10px}
+    .between{justify-content:space-between}
+    .card{background:#FBFAF6;border-radius:10px;padding:12px 14px;border:1px solid #E0DBCC}
+    .pill{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+    .pill-copper{background:#C86B3E;color:#FBFAF6}
+    .pill-mist{background:#E5E1D8;color:#4A5651}
+    .btn-back{border:0;background:transparent;padding:0;display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:#4A5651}
+    /* Render hero */
+    .render{position:relative;aspect-ratio:16/10;background:linear-gradient(180deg,#7A968C 0%,#4A6B6B 40%,#5C6B4A 40.1%,#3D4A2E 100%);overflow:hidden}
+    .render::before{content:'';position:absolute;top:20%;left:20%;right:20%;bottom:35%;background:linear-gradient(180deg,rgba(200,107,62,0.3),rgba(122,108,85,0.6));border-radius:4px}
+    .render::after{content:'';position:absolute;bottom:0;left:0;right:0;height:35%;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.4))}
+    .hs{position:absolute;width:24px;height:24px;border-radius:50%;background:#C86B3E;border:2px solid #FBFAF6;box-shadow:0 2px 8px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;color:#FBFAF6;font-size:10px;font-weight:700;font-family:'IBM Plex Mono',monospace;transform:translate(-50%,-50%)}
+    .render-meta{position:absolute;top:12px;left:12px;background:rgba(15,19,16,0.7);backdrop-filter:blur(8px);color:#EFEAE0;padding:6px 10px;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+    .render-actions{position:absolute;bottom:12px;right:12px;display:flex;gap:6px}
+    .render-btn{background:rgba(15,19,16,0.7);backdrop-filter:blur(8px);border:0;color:#EFEAE0;padding:6px 10px;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;display:inline-flex;align-items:center;gap:4px}
+    .phase-rail{display:flex;gap:4px;margin-top:12px}
+    .phase-step{flex:1;height:4px;border-radius:2px;background:#DDD6C7}
+    .phase-step.done{background:#1B3A2F}
+    .phase-step.now{background:#C86B3E}
+    .tabbar{position:absolute;bottom:0;left:0;right:0;height:76px;background:#1B3A2F;display:flex;justify-content:space-around;align-items:flex-start;padding:10px 8px 0}
+    .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#7A968C}
+    .tab.active{color:#EFEAE0}
+    .tab-dot{width:20px;height:2px;background:transparent;border-radius:2px;margin-top:2px}
+    .tab.active .tab-dot{background:#C86B3E}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <div style="padding:0 16px 12px">
+      <button class="btn-back"><svg width="10" height="12" viewBox="0 0 8 14"><path d="M7 1L1 7l6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>Projects</button>
+    </div>
+
+    <!-- Hero render with hotspots -->
+    <div class="render">
+      <div class="render-meta">Ridgeline · v3 · approved</div>
+      <div class="render-actions">
+        <button class="render-btn">Versions ▾</button>
+        <button class="render-btn">Edit hotspots</button>
+      </div>
+      <div class="hs" style="left:32%;top:52%">1</div>
+      <div class="hs" style="left:58%;top:48%">2</div>
+      <div class="hs" style="left:72%;top:62%">3</div>
+      <div class="hs" style="left:24%;top:72%">4</div>
+      <div class="hs" style="left:50%;top:78%">5</div>
+    </div>
+
+    <div style="padding:14px 16px 0">
+      <div class="row between">
+        <div>
+          <div class="label">Ridgeline residence · Cotter</div>
+          <div class="heading" style="font-size:24px;margin-top:4px">Patio + kitchen</div>
+          <div class="meta" style="margin-top:4px">24 Ridgeline Rd · started Mar 3</div>
+        </div>
+        <div style="text-align:right">
+          <div class="tabular" style="font-size:22px">$142,800</div>
+          <div class="pill pill-copper" style="margin-top:4px">● Active · Ph 3/6</div>
+        </div>
+      </div>
+
+      <div class="phase-rail">
+        <div class="phase-step done"></div>
+        <div class="phase-step done"></div>
+        <div class="phase-step now"></div>
+        <div class="phase-step"></div>
+        <div class="phase-step"></div>
+        <div class="phase-step"></div>
+      </div>
+      <div class="row between" style="margin-top:6px">
+        <span class="label" style="font-size:9px">Demo</span>
+        <span class="label" style="font-size:9px">Excav</span>
+        <span class="label" style="font-size:9px;color:#C86B3E">Concrete</span>
+        <span class="label" style="font-size:9px">Kitchen</span>
+        <span class="label" style="font-size:9px">Finish</span>
+        <span class="label" style="font-size:9px">Punch</span>
+      </div>
+
+      <div style="margin-top:16px">
+        <div class="label" style="padding:0 0 6px">Next action</div>
+        <div class="card" style="background:#1B3A2F;color:#EFEAE0;border-color:#1B3A2F">
+          <div class="row between">
+            <div>
+              <div style="font-weight:700;font-size:14px">Client waiting on paver selection</div>
+              <div style="font-size:11px;color:#A5B8AE;margin-top:2px">3 options queued · $2,400 impact</div>
+            </div>
+            <button style="background:#C86B3E;border:0;color:#FBFAF6;padding:8px 12px;border-radius:6px;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase">Nudge</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px">
+        <div class="label" style="padding:0 0 8px">Activity</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="row" style="gap:10px">
+            <div style="width:6px;height:6px;border-radius:50%;background:#4A7A50;margin-top:5px"></div>
+            <div style="flex:1"><div style="font-size:13px">Rachel opened the render · <span class="meta">2h</span></div></div>
+          </div>
+          <div class="row" style="gap:10px">
+            <div style="width:6px;height:6px;border-radius:50%;background:#C86B3E;margin-top:5px"></div>
+            <div style="flex:1"><div style="font-size:13px">Reuben submitted invoice #14 · <span class="meta">$8,200</span></div></div>
+          </div>
+          <div class="row" style="gap:10px">
+            <div style="width:6px;height:6px;border-radius:50%;background:#A5A8A3;margin-top:5px"></div>
+            <div style="flex:1"><div style="font-size:13px">Photos uploaded to Phase 3 · <span class="meta">6 new</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabbar">
+    <div class="tab"><svg width="20" height="20" viewBox="0 0 22 22"><rect x="4" y="4" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="12" y="4" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="4" y="12" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="12" y="12" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg><span>Today</span><div class="tab-dot"></div></div>
+    <div class="tab active"><svg width="20" height="20" viewBox="0 0 22 22"><path d="M4 6h14M4 11h14M4 16h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Projects</span><div class="tab-dot"></div></div>
+    <div class="tab"><svg width="20" height="20" viewBox="0 0 22 22"><rect x="3" y="7" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M3 11h16" stroke="currentColor" stroke-width="1.5"/></svg><span>Money</span><div class="tab-dot"></div></div>
+    <div class="tab"><svg width="20" height="20" viewBox="0 0 22 22"><circle cx="11" cy="8" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M4 19c1-4 4-5 7-5s6 1 7 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg><span>People</span><div class="tab-dot"></div></div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

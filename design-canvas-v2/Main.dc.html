@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    /* Foundry — contractor density: dense, utilitarian, tabular, thumb-reachable */
+    body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#EFEAE0;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#EFEAE0;display:flex;flex-direction:column;overflow:hidden}
+    .content{flex:1;padding:56px 16px 96px;overflow:hidden}
+    .display{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-0.01em;line-height:1}
+    .heading{font-family:'Inter',sans-serif;font-weight:700;letter-spacing:-0.02em}
+    .label{font-family:'Inter',sans-serif;font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:13px;color:#4A5651;letter-spacing:-0.005em}
+    .tabular{font-family:'IBM Plex Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+    .card{background:#FBFAF6;border-radius:10px;padding:12px 14px;border:1px solid #E0DBCC}
+    .row{display:flex;align-items:center;gap:10px}
+    .between{justify-content:space-between}
+    .divider{height:1px;background:#DDD6C7;margin:0 -16px}
+    .pill{display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:999px;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase}
+    .pill-pine{background:#1B3A2F;color:#EFEAE0}
+    .pill-copper{background:#C86B3E;color:#FBFAF6}
+    .pill-mist{background:#E5E1D8;color:#4A5651}
+    .dot{width:6px;height:6px;border-radius:50%;display:inline-block}
+    .dot-copper{background:#C86B3E}
+    .dot-moss{background:#4A7A50}
+    .dot-fog{background:#A5A8A3}
+    /* tabbar contractor */
+    .tabbar{position:absolute;bottom:0;left:0;right:0;height:76px;background:#1B3A2F;display:flex;justify-content:space-around;align-items:flex-start;padding:10px 8px 0;border-top:1px solid #0F2620}
+    .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-family:'Inter',sans-serif;font-weight:600;font-size:9px;letter-spacing:0.08em;text-transform:uppercase;color:#7A968C}
+    .tab.active{color:#EFEAE0}
+    .tab-dot{width:20px;height:2px;background:transparent;border-radius:2px;margin-top:2px}
+    .tab.active .tab-dot{background:#C86B3E}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <!-- Header (dense: everything above the fold) -->
+    <div class="row between" style="margin-bottom:14px">
+      <div>
+        <div class="label" style="letter-spacing:0.16em">Wed · Apr 22</div>
+        <div class="heading" style="font-size:22px;margin-top:2px">Today</div>
+      </div>
+      <div style="display:flex;gap:6px">
+        <button style="width:34px;height:34px;border-radius:8px;border:1px solid #DDD6C7;background:#FBFAF6;display:flex;align-items:center;justify-content:center">
+          <svg width="16" height="16" viewBox="0 0 22 22"><circle cx="11" cy="11" r="7" stroke="#0F1310" stroke-width="1.5" fill="none"/><path d="M11 8v3l2 2" stroke="#0F1310" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <button style="width:34px;height:34px;border-radius:8px;border:1px solid #DDD6C7;background:#FBFAF6;display:flex;align-items:center;justify-content:center;position:relative">
+          <svg width="16" height="16" viewBox="0 0 22 22"><path d="M4 8a7 7 0 0114 0v5l2 3H2l2-3V8z" stroke="#0F1310" stroke-width="1.5" fill="none" stroke-linejoin="round"/></svg>
+          <div style="position:absolute;top:5px;right:5px;width:7px;height:7px;border-radius:50%;background:#C86B3E;border:1.5px solid #FBFAF6"></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Snapshot strip -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:14px">
+      <div class="card" style="padding:10px 12px">
+        <div class="label" style="font-size:9px">Awaiting client</div>
+        <div class="tabular" style="font-size:20px;margin-top:2px;color:#C86B3E">04</div>
+      </div>
+      <div class="card" style="padding:10px 12px">
+        <div class="label" style="font-size:9px">Overdue</div>
+        <div class="tabular" style="font-size:20px;margin-top:2px">$18k</div>
+      </div>
+      <div class="card" style="padding:10px 12px">
+        <div class="label" style="font-size:9px">Unread</div>
+        <div class="tabular" style="font-size:20px;margin-top:2px">07</div>
+      </div>
+    </div>
+
+    <!-- On site today -->
+    <div class="label" style="padding:6px 4px">On site today</div>
+    <div class="card" style="padding:12px 14px;margin-bottom:8px">
+      <div class="row between">
+        <div>
+          <div class="heading" style="font-size:15px">Ridgeline · patio + kitchen</div>
+          <div class="meta" style="margin-top:2px">Cotter residence · 24 Ridgeline Rd</div>
+        </div>
+        <div class="pill pill-copper"><span class="dot dot-fog" style="background:#FBFAF6"></span>Concrete</div>
+      </div>
+      <div class="row between" style="margin-top:10px">
+        <div class="row" style="gap:4px">
+          <div style="width:22px;height:22px;border-radius:50%;background:#4A5651;color:#EFEAE0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700">RM</div>
+          <div style="width:22px;height:22px;border-radius:50%;background:#7A6C55;color:#EFEAE0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;margin-left:-4px">DK</div>
+          <div style="width:22px;height:22px;border-radius:50%;background:#1B3A2F;color:#EFEAE0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;margin-left:-4px">+3</div>
+        </div>
+        <div class="tabular" style="font-size:12px;color:#4A5651">$142,800 · Phase 3/6</div>
+      </div>
+    </div>
+
+    <div class="card" style="padding:12px 14px;margin-bottom:14px">
+      <div class="row between">
+        <div>
+          <div class="heading" style="font-size:15px">Beacon · pool deck</div>
+          <div class="meta" style="margin-top:2px">Vega residence · 8am pre-pour walk</div>
+        </div>
+        <div class="pill pill-mist">Framing</div>
+      </div>
+    </div>
+
+    <!-- Awaiting your client -->
+    <div class="row between" style="padding:6px 4px">
+      <span class="label">Awaiting client</span>
+      <span class="label" style="color:#C86B3E">04</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <div class="card" style="padding:10px 14px">
+        <div class="row between">
+          <div>
+            <div style="font-size:13px;font-weight:600">Cotter · patio pavers selection</div>
+            <div class="meta" style="font-size:11px;margin-top:2px">3 options · $2,400 impact · sent 4d ago</div>
+          </div>
+          <span class="tabular" style="font-size:11px;color:#C86B3E">4d</span>
+        </div>
+      </div>
+      <div class="card" style="padding:10px 14px">
+        <div class="row between">
+          <div>
+            <div style="font-size:13px;font-weight:600">Vega · CO #003 pergola upgrade</div>
+            <div class="meta" style="font-size:11px;margin-top:2px">$4,800 · signature pending</div>
+          </div>
+          <span class="tabular" style="font-size:11px;color:#C86B3E">2d</span>
+        </div>
+      </div>
+      <div class="card" style="padding:10px 14px">
+        <div class="row between">
+          <div>
+            <div style="font-size:13px;font-weight:600">Harlan · deposit</div>
+            <div class="meta" style="font-size:11px;margin-top:2px">$62,500 · contract signed</div>
+          </div>
+          <span class="tabular" style="font-size:11px;color:#C86B3E">1d</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabbar">
+    <div class="tab active"><svg width="20" height="20" viewBox="0 0 22 22"><rect x="4" y="4" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="12" y="4" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="4" y="12" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/><rect x="12" y="12" width="6" height="6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg><span>Today</span><div class="tab-dot"></div></div>
+    <div class="tab"><svg width="20" height="20" viewBox="0 0 22 22"><path d="M4 6h14M4 11h14M4 16h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>Projects</span><div class="tab-dot"></div></div>
+    <div class="tab"><svg width="20" height="20" viewBox="0 0 22 22"><rect x="3" y="7" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M3 11h16" stroke="currentColor" stroke-width="1.5"/></svg><span>Money</span><div class="tab-dot"></div></div>
+    <div class="tab"><svg width="20" height="20" viewBox="0 0 22 22"><circle cx="11" cy="8" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M4 19c1-4 4-5 7-5s6 1 7 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg><span>People</span><div class="tab-dot"></div></div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',system-ui,sans-serif;background:#F2F0E8;color:#0A0A0A;-webkit-font-smoothing:antialiased}
+    .page{width:1400px;padding:64px 72px;background:#F2F0E8;box-sizing:border-box}
+    .display{font-family:'Archivo','Manrope',system-ui,sans-serif;font-weight:800;letter-spacing:-0.03em;line-height:0.92}
+    .display-md{font-family:'Archivo','Manrope',system-ui,sans-serif;font-weight:800;letter-spacing:-0.02em;line-height:0.95}
+    .label{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#0A0A0A}
+    .label-muted{font-weight:600;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#7A7A70}
+    .meta{font-weight:500;font-size:13px;color:#7A7A70;letter-spacing:-0.005em}
+    .tabular{font-variant-numeric:tabular-nums}
+    .section{margin-top:64px;padding-top:32px;border-top:1px solid #E8E6DF}
+    .section-head{margin-bottom:32px}
+    .section-eyebrow{font-family:'Inter',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#7A7A70;margin-bottom:8px}
+    .section-title{font-family:'Archivo',sans-serif;font-weight:800;font-size:44px;letter-spacing:-0.03em;line-height:1}
+    .grid{display:grid;gap:16px}
+    .swatch{border-radius:12px;padding:16px;height:120px;display:flex;flex-direction:column;justify-content:flex-end;border:0.5px solid rgba(10,10,10,0.06)}
+    .sw-code{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:0}
+    .card-demo{background:#FAF9F2;border-radius:16px;padding:18px;border:0.5px solid rgba(10,10,10,0.04)}
+    .card-mist-demo{background:#E8E6DF;border-radius:16px;padding:18px}
+    .hero-yellow-demo{background:#F5F500;border-radius:20px;padding:22px}
+    .hero-sand-demo{background:#A39E85;border-radius:20px;padding:22px}
+    .hero-ink-demo{background:#0A0A0A;border-radius:20px;padding:22px;color:#F2F0E8}
+    .btn-primary{height:56px;padding:0 24px;border-radius:28px;border:0;background:#0A0A0A;color:#F2F0E8;font-weight:700;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;cursor:pointer}
+    .btn-secondary{height:56px;padding:0 24px;border-radius:28px;border:1px solid rgba(10,10,10,0.12);background:transparent;color:#0A0A0A;font-weight:700;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;cursor:pointer}
+    .btn-yellow{height:56px;padding:0 24px;border-radius:28px;border:0;background:#F5F500;color:#0A0A0A;font-weight:700;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;cursor:pointer}
+    .btn-pill{height:36px;padding:0 14px;border-radius:999px;border:0;background:#0A0A0A;color:#F2F0E8;font-weight:600;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;cursor:pointer}
+    .btn-back{border:0;background:rgba(10,10,10,0.05);border-radius:18px;padding:8px 12px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;cursor:pointer}
+    .chip{display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:999px;font-weight:600;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap}
+    .chip .cd{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:0.85}
+    .chip-success{background:#D7F0E2;color:#0E5A37}
+    .chip-warning{background:#FFE4C2;color:#7A4A12}
+    .chip-error{background:#FBD9D9;color:#7A1A1A}
+    .chip-info{background:#DCE3FB;color:#1F3380}
+    .chip-ink{background:#0A0A0A;color:#F2F0E8}
+    .avatar{border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:700;color:#0A0A0A;background:#A39E85}
+    .a-sm{width:28px;height:28px;font-size:11px}
+    .a-md{width:40px;height:40px;font-size:14px}
+    .a-mdlg{width:46px;height:46px;font-size:15px}
+    .a-lg{width:56px;height:56px;font-size:18px}
+    .a-xl{width:80px;height:80px;font-size:26px}
+    .rail{display:flex;align-items:center;gap:6px;width:280px}
+    .rail-step{flex:1;height:3px;border-radius:2px;background:#B5B4B0}
+    .rail-step.done{background:#F5F500}
+    .rail-step.now{background:#0A0A0A}
+    .dot{display:inline-block;width:6px;height:6px;border-radius:50%;vertical-align:middle;margin-right:6px}
+    .dot.success{background:#00B87C}.dot.warning{background:#FF9500}.dot.error{background:#E5383B}.dot.info{background:#4A6CF7}.dot.ink{background:#0A0A0A}
+    .row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+    .comp-label{font-family:'Inter',sans-serif;font-weight:600;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#7A7A70;margin-bottom:12px;display:block}
+    .type-spec{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-bottom:0.5px solid #E8E6DF;align-items:baseline}
+    .type-spec:last-child{border-bottom:0}
+    .type-meta{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:#7A7A70;line-height:1.6}
+    .tab-bar-demo{width:390px;height:88px;background:rgba(242,240,232,0.86);backdrop-filter:blur(20px) saturate(160%);border-top:0.5px solid rgba(10,10,10,0.06);border-radius:16px;display:flex;justify-content:space-around;align-items:flex-start;padding:14px 12px 0}
+    .tab-demo{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;font-weight:600;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:#7A7A70}
+    .tab-demo.active{color:#0A0A0A}
+    .tab-dot-demo{width:4px;height:4px;border-radius:50%;background:transparent;margin-top:2px}
+    .tab-demo.active .tab-dot-demo{background:#0A0A0A}
+    .icon-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:16px}
+    .icon-tile{aspect-ratio:1;background:#FAF9F2;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:0.5px solid rgba(10,10,10,0.04)}
+    .icon-tile .name{font-size:10px;color:#7A7A70;letter-spacing:0.04em;text-transform:uppercase;font-weight:600}
+    .slide-track{position:relative;height:64px;width:340px;border-radius:32px;background:#0A0A0A;overflow:hidden}
+    .slide-fill{position:absolute;top:0;left:0;bottom:0;width:64px;background:rgba(245,245,0,0.18)}
+    .slide-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(242,240,232,0.6);font-weight:600;font-size:14px;letter-spacing:0.06em;text-transform:uppercase}
+    .slide-knob{position:absolute;top:6px;left:6px;width:52px;height:52px;border-radius:50%;background:#F5F500;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(245,245,0,0.4)}
+    .principle{background:#FAF9F2;border-radius:16px;padding:24px;border:0.5px solid rgba(10,10,10,0.04)}
+    .principle .num{font-family:'Archivo',sans-serif;font-weight:800;font-size:44px;letter-spacing:-0.03em;color:#F5F500;line-height:1;margin-bottom:12px;-webkit-text-stroke:1px #0A0A0A}
+    .principle .head{font-family:'Archivo',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.02em;line-height:1.15;margin-bottom:8px}
+  </style>
+</helmet>
+<div class="page">
+
+  <!-- HEADER -->
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px">
+    <div>
+      <div class="label-muted" style="margin-bottom:16px">Lifted · Design System · v1.0 · Apr 2026</div>
+      <div class="display" style="font-size:96px;letter-spacing:-0.045em">Lifted.</div>
+      <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.02em;margin-top:12px;max-width:640px;line-height:1.2">
+        Work with anyone, anywhere, compliantly. The all-in-one mobile workspace for distributed teams.
+      </div>
+    </div>
+    <!-- Logo mark -->
+    <div style="width:120px;height:120px;background:#F5F500;border-radius:28px;display:flex;align-items:center;justify-content:center;border:2px solid #0A0A0A">
+      <svg width="60" height="60" viewBox="0 0 60 60"><path d="M18 44 L30 18 L42 44 M22 36 L38 36" stroke="#0A0A0A" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+
+  <!-- BRAND PRINCIPLES -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-eyebrow">Brand</div>
+      <div class="section-title">Editorial, not corporate.</div>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+      <div class="principle">
+        <div class="num">01</div>
+        <div class="head">Editorial, magazine-like</div>
+        <div class="meta" style="line-height:1.5">Oversized display type, unusual layouts, bento composition. Never a form buried in a card.</div>
+      </div>
+      <div class="principle">
+        <div class="num">02</div>
+        <div class="head">Yellow is a spotlight</div>
+        <div class="meta" style="line-height:1.5">One hottest action per surface. Not a decoration. Reserve #F5F500 for the moment that matters.</div>
+      </div>
+      <div class="principle">
+        <div class="num">03</div>
+        <div class="head">Human, monogrammed</div>
+        <div class="meta" style="line-height:1.5">Contractors are people with initials, cities, currencies. Never rows of stock avatars.</div>
+      </div>
+      <div class="principle">
+        <div class="num">04</div>
+        <div class="head">Choreographed motion</div>
+        <div class="meta" style="line-height:1.5">Payments turn yellow one-by-one as they clear — motion narrates state, doesn't decorate it.</div>
+      </div>
+      <div class="principle">
+        <div class="num">05</div>
+        <div class="head">Bone base</div>
+        <div class="meta" style="line-height:1.5">A warm #F2F0E8 base — never sterile #FFFFFF. Every surface breathes with earth tones.</div>
+      </div>
+      <div class="principle">
+        <div class="num">06</div>
+        <div class="head">Compliant, quietly</div>
+        <div class="meta" style="line-height:1.5">Local rails, MSAs, tax forms — technical rigor with a calm voice. No fear, no jargon.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLOR -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-eyebrow">Color · Tokens</div>
+      <div class="section-title">Palette.</div>
+    </div>
+
+    <div style="margin-bottom:32px">
+      <span class="comp-label">Core</span>
+      <div class="grid" style="grid-template-columns:repeat(6,minmax(0,1fr))">
+        <div class="swatch" style="background:#F5F500"><div class="label" style="color:#0A0A0A">Yellow</div><div class="sw-code" style="color:#0A0A0A">#F5F500 · --yellow</div></div>
+        <div class="swatch" style="background:#0A0A0A;color:#F2F0E8"><div class="label" style="color:#F2F0E8">Ink</div><div class="sw-code">#0A0A0A · --ink</div></div>
+        <div class="swatch" style="background:#F2F0E8"><div class="label">Bone</div><div class="sw-code">#F2F0E8 · --bone</div></div>
+        <div class="swatch" style="background:#A39E85"><div class="label">Sand</div><div class="sw-code">#A39E85 · --sand</div></div>
+        <div class="swatch" style="background:#E8E6DF"><div class="label">Mist</div><div class="sw-code">#E8E6DF · --mist</div></div>
+        <div class="swatch" style="background:#B5B4B0"><div class="label">Fog</div><div class="sw-code">#B5B4B0 · --fog</div></div>
+      </div>
+    </div>
+
+    <div>
+      <span class="comp-label">Semantic</span>
+      <div class="grid" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+        <div class="swatch" style="background:#00B87C;color:#fff"><div class="label" style="color:#fff">Success</div><div class="sw-code" style="color:rgba(255,255,255,0.9)">#00B87C · --success</div></div>
+        <div class="swatch" style="background:#FF9500;color:#fff"><div class="label" style="color:#fff">Warning</div><div class="sw-code" style="color:rgba(255,255,255,0.9)">#FF9500 · --warning</div></div>
+        <div class="swatch" style="background:#E5383B;color:#fff"><div class="label" style="color:#fff">Error</div><div class="sw-code" style="color:rgba(255,255,255,0.9)">#E5383B · --error</div></div>
+        <div class="swatch" style="background:#4A6CF7;color:#fff"><div class="label" style="color:#fff">Info</div><div class="sw-code" style="color:rgba(255,255,255,0.9)">#4A6CF7 · --info</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TYPE -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-eyebrow">Type · Manrope / Archivo · Inter</div>
+      <div class="section-title">Voice on the page.</div>
+    </div>
+
+    <div style="margin-bottom:32px">
+      <span class="comp-label">Display · Archivo 800, letter-spacing −0.03em</span>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Display XL · 96/0.9</div>
+      <div class="display" style="font-size:96px">Good morning.</div>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Display · 64/0.9</div>
+      <div class="display" style="font-size:64px">$142,308</div>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Display MD · 32/1.0</div>
+      <div class="display-md" style="font-size:32px">Tax form expires in four days.</div>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Heading · 19/1.1 · Archivo 700</div>
+      <div style="font-family:'Archivo',sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.02em;line-height:1.1">Atlas iOS rebuild</div>
+    </div>
+
+    <div style="margin:32px 0 8px">
+      <span class="comp-label">Body · Inter</span>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Body · 15/1.4 · 600</div>
+      <div style="font-size:15px;font-weight:600;line-height:1.4">Approve April milestone</div>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Meta · 13/1.5 · 500</div>
+      <div style="font-size:13px;font-weight:500;color:#7A7A70">Four projects in motion, two contracts moving, three documents to clear.</div>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Label · 11/1 · 600 · +0.08em</div>
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase">Awaiting signature</div>
+    </div>
+    <div class="type-spec">
+      <div class="type-meta">Label muted · 11 · #7A7A70</div>
+      <div class="label-muted">Combined budget</div>
+    </div>
+  </div>
+
+  <!-- CARDS & SURFACES -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-eyebrow">Surfaces</div>
+      <div class="section-title">Cards.</div>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+      <div>
+        <span class="comp-label">Card · #FAF9F2 · r16 · p16</span>
+        <div class="card-demo">
+          <span class="label-muted">Awaiting signature</span>
+          <div class="display-md" style="font-size:28px;line-height:1;margin-top:10px">02d 04h</div>
+          <div class="meta" style="margin-top:8px">to Maya Chen</div>
+        </div>
+      </div>
+      <div>
+        <span class="comp-label">Card mist · #E8E6DF</span>
+        <div class="card-mist-demo">
+          <span class="label-muted">Inbox</span>
+          <div class="display-md" style="font-size:28px;line-height:1;margin-top:10px">You have 07 unread.</div>
+        </div>
+      </div>
+      <div>
+        <span class="comp-label">Hero yellow · signature card</span>
+        <div class="hero-yellow-demo">
+          <span class="label">Next run</span>
+          <div class="display" style="font-size:32px;margin-top:10px">$38,420</div>
+          <div class="meta" style="color:rgba(10,10,10,0.7);margin-top:8px">in 2d · 14h · 32m</div>
+        </div>
+      </div>
+      <div>
+        <span class="comp-label">Hero sand · secondary hero</span>
+        <div class="hero-sand-demo">
+          <span class="label">Compliance</span>
+          <div class="display-md" style="font-size:22px;line-height:1.1;margin-top:10px">Tax form expires in four days.</div>
+        </div>
+      </div>
+      <div>
+        <span class="comp-label">Hero ink · dark surface</span>
+        <div class="hero-ink-demo">
+          <span class="label" style="color:rgba(242,240,232,0.6)">Spend · April</span>
+          <div class="display-md" style="font-size:32px;margin-top:10px">$142,308</div>
+        </div>
+      </div>
+      <div>
+        <span class="comp-label">Radii</span>
+        <div style="display:flex;flex-direction:column;gap:8px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#7A7A70">
+          <div>--card-radius · 16px</div>
+          <div>--hero-radius · 20px</div>
+          <div>pill · 999px</div>
+          <div>sheet · 24px (top only)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-eyebrow">Actions</div>
+      <div class="section-title">Buttons.</div>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+      <div>
+        <span class="comp-label">Primary · full-width</span>
+        <button class="btn-primary" style="width:100%">Run now</button>
+      </div>
+      <div>
+        <span class="comp-label">Secondary · outline</span>
+        <button class="btn-secondary" style="width:100%">Schedule</button>
+      </div>
+      <div>
+        <span class="comp-label">Yellow · rare, single hottest action</span>
+        <button class="btn-yellow" style="width:100%">Approve</button>
+      </div>
+      <div>
+        <span class="comp-label">Ink pill · header CTA</span>
+        <button class="btn-pill">+ New project</button>
+      </div>
+      <div>
+        <span class="comp-label">Back chevron · top bar</span>
+        <button class="btn-back">
+          <svg width="12" height="14" viewBox="0 0 8 14"><path d="M7 1L1 7l6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Today
+        </button>
+      </div>
+      <div>
+        <span class="comp-label">Slide to confirm</span>
+        <div class="slide-track">
+          <div class="slide-fill"></div>
+          <div class="slide-label">Slide to send  →</div>
+          <div class="slide-knob"><svg width="22" height="22" viewBox="0 0 22 22"><path d="M3 11h16M13 5l6 6-6 6" stroke="#0A0A0A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHIPS -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-eyebrow">State</div>
+      <div class="section-title">Status chips + dots.</div>
+    </div>
+    <div class="row" style="margin-bottom:32px">
+      <div class="chip chip-success"><span class="cd"></span>Signed</div>
+      <div class="chip chip-warning"><span class="cd"></span>Awaiting countersig.</div>
+      <div class="chip chip-error"><span class="cd"></span>Rejected</div>
+      <div class="chip chip-info"><span class="cd"></span>Opened</div>
+      <div class="chip chip-ink"><span class="cd"></span>Sent</div>
+    </div>
+    <div class="row">
+      <span class="meta"><span class="dot success"></span>success · #00B87C</span>
+      <span class="meta"><span class="dot warning"></span>warning · #FF9500</span>
+      <span class="meta"><span class="dot error"></span>error · #E5383B</span>
+      <span class="meta"><span class="dot info"></span>info · #4A6CF7</span>
+      <span class="meta"><span class="dot ink"></span>ink · #0A0A0A</span>
+    </div>
+  </div>
+
+  <!-- AVATARS -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-eyebrow">Identity</div>
+      <div class="section-title">Avatars.</div>
+    </div>
+    <div class="row" style="align-items:flex-end;gap:32px">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+        <div class="avatar a-sm">MC</div>
+        <div class="type-meta">sm · 28</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+        <div class="avatar a-md">MC</div>
+        <div class="type-meta">md · 40</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+        <div class="avatar a-mdlg">MC</div>
+        <div class="type-meta">md-lg · 46</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+        <div class="avatar a-lg">MC</div>
+        <div class="type-meta">lg · 56</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+        <div class="avatar a-xl">MC</div>
+        <div class="type-meta">xl · 80</div>
+      </div>
+    </div>
+    <div style="margin-top:32px">
+      <span class="comp-label">Palette · deterministic tones per contractor id</span>
+      <div class="row">
+        <div class="avatar a-md" style="background:#A39E85">MC</div>
+        <div class="avatar a-md" style="background:#7A7A70">CR</div>
+        <div class="avatar a-md" style="background:#B5B4B0">TA</div>
+        <div class="avatar a-md" style="background:#7C5A3A;color:#F5EFE3">AQ</div>
+        <div class="avatar a-md" style="background:#4A5547;color:#E8E4DA">NM</div>
+        <div class="avatar a-md" style="background:#6B5238;color:#F0E6D8">AB</div>
+        <div class="avatar a-md" style="background:#F5F500">✓</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-eyebrow">Navigation</div>
+      <div class="section-title">Tab bar + time tabs.</div>
+    </div>
+
+    <div style="margin-bottom:32px">
+      <span class="comp-label">Bottom tab bar · 88h · blurred bone</span>
+      <div class="tab-bar-demo">
+        <div class="tab-demo active">
+          <svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="11" r="3.2" fill="currentColor"/><circle cx="11" cy="11" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          <span>Today</span><span class="tab-dot-demo"></span>
+        </div>
+        <div class="tab-demo">
+          <svg width="22" height="22" viewBox="0 0 22 22"><circle cx="11" cy="8" r="3.5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M3 19c1.4-3.6 5-5 8-5s6.6 1.4 8 5" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          <span>Contractors</span><span class="tab-dot-demo"></span>
+        </div>
+        <div class="tab-demo">
+          <svg width="22" height="22" viewBox="0 0 22 22"><rect x="3" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="11" cy="12" r="2.4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          <span>Pay</span><span class="tab-dot-demo"></span>
+        </div>
+        <div class="tab-demo">
+          <svg width="22" height="22" viewBox="0 0 22 22"><path d="M5 3h9l4 4v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/><path d="M14 3v4h4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          <span>Contracts</span><span class="tab-dot-demo"></span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <span class="comp-label">Time tabs · underline slides on active</span>
+      <div style="display:flex;gap:18px;padding:14px 0 6px">
+        <div style="padding:6px 0;color:#0A0A0A;font-weight:700;font-size:15px;letter-spacing:-0.01em;display:flex;align-items:baseline;gap:6px;border-bottom:2px solid #0A0A0A"><span>Today</span><span style="display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:18px;padding:0 6px;border-radius:9px;background:#0A0A0A;color:#F2F0E8;font-size:11px;font-weight:700;margin-left:6px">6</span></div>
+        <div style="padding:6px 0;color:#7A7A70;font-weight:500;font-size:15px;display:flex;align-items:baseline;gap:6px"><span>Week</span><span style="display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:18px;padding:0 6px;border-radius:9px;background:#E8E6DF;color:#7A7A70;font-size:11px;font-weight:700;margin-left:6px">14</span></div>
+        <div style="padding:6px 0;color:#7A7A70;font-weight:500;font-size:15px;display:flex;align-items:baseline;gap:6px"><span>April</span><span style="display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:18px;padding:0 6px;border-radius:9px;background:#E8E6DF;color:#7A7A70;font-size:11px;font-weight:700;margin-left:6px">38</span></div>
+        <div style="padding:6px 0;color:#7A7A70;font-weight:500;font-size:15px;display:flex;align-items:baseline;gap:6px"><span>Q2</span><span style="display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:18px;padding:0 6px;border-radius:9px;background:#E8E6DF;color:#7A7A70;font-size:11px;font-weight:700;margin-left:6px">92</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRESS RAIL -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-eyebrow">Progress</div>
+      <div class="section-title">Signing rail.</div>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr));gap:32px">
+      <div>
+        <span class="comp-label">Sent (1/4)</span>
+        <div class="rail"><div class="rail-step now"></div><div class="rail-step"></div><div class="rail-step"></div><div class="rail-step"></div></div>
+      </div>
+      <div>
+        <span class="comp-label">Signing (3/4)</span>
+        <div class="rail"><div class="rail-step done"></div><div class="rail-step done"></div><div class="rail-step now"></div><div class="rail-step"></div></div>
+      </div>
+      <div>
+        <span class="comp-label">Signed (4/4)</span>
+        <div class="rail"><div class="rail-step done"></div><div class="rail-step done"></div><div class="rail-step done"></div><div class="rail-step done"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ICONS -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-eyebrow">Iconography · Inline SVG, 22px grid, 1.5 stroke</div>
+      <div class="section-title">Icons.</div>
+    </div>
+    <div class="icon-grid">
+      <div class="icon-tile"><svg width="28" height="28" viewBox="0 0 22 22"><circle cx="11" cy="11" r="3.2" fill="#0A0A0A"/><circle cx="11" cy="11" r="9" stroke="#0A0A0A" stroke-width="1.5" fill="none"/></svg><div class="name">Today</div></div>
+      <div class="icon-tile"><svg width="28" height="28" viewBox="0 0 22 22"><circle cx="11" cy="8" r="3.5" stroke="#0A0A0A" stroke-width="1.5" fill="none"/><path d="M3 19c1.4-3.6 5-5 8-5s6.6 1.4 8 5" stroke="#0A0A0A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg><div class="name">Contractors</div></div>
+      <div class="icon-tile"><svg width="28" height="28" viewBox="0 0 22 22"><rect x="3" y="6" width="16" height="12" rx="2" stroke="#0A0A0A" stroke-width="1.5" fill="none"/><circle cx="11" cy="12" r="2.4" stroke="#0A0A0A" stroke-width="1.5" fill="none"/></svg><div class="name">Pay</div></div>
+      <div class="icon-tile"><svg width="28" height="28" viewBox="0 0 22 22"><path d="M5 3h9l4 4v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1z" stroke="#0A0A0A" stroke-width="1.5" fill="none" stroke-linejoin="round"/><path d="M14 3v4h4M7 12h8M7 15h6" stroke="#0A0A0A" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg><div class="name">Contracts</div></div>
+      <div class="icon-tile"><svg width="28" height="28" viewBox="0 0 8 14"><path d="M7 1L1 7l6 6" stroke="#0A0A0A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="name">Back</div></div>
+      <div class="icon-tile"><svg width="28" height="28" viewBox="0 0 8 14"><path d="M1 1l6 6-6 6" stroke="#0A0A0A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="name">Chevron</div></div>
+      <div class="icon-tile"><svg width="28" height="28" viewBox="0 0 22 22"><path d="M5 11l4 4 8-8" stroke="#0A0A0A" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="name">Check</div></div>
+      <div class="icon-tile"><svg width="28" height="28" viewBox="0 0 22 22"><path d="M3 11h16M13 5l6 6-6 6" stroke="#0A0A0A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="name">Send</div></div>
+    </div>
+  </div>
+
+  <!-- SPACING & GRID -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-eyebrow">Space</div>
+      <div class="section-title">Spacing scale.</div>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(8,minmax(0,1fr))">
+      <div><div style="height:4px;background:#0A0A0A;margin-bottom:8px"></div><div class="type-meta">gap-4</div></div>
+      <div><div style="height:6px;background:#0A0A0A;margin-bottom:8px"></div><div class="type-meta">gap-6</div></div>
+      <div><div style="height:8px;background:#0A0A0A;margin-bottom:8px"></div><div class="type-meta">gap-8</div></div>
+      <div><div style="height:10px;background:#0A0A0A;margin-bottom:8px"></div><div class="type-meta">gap-10</div></div>
+      <div><div style="height:12px;background:#0A0A0A;margin-bottom:8px"></div><div class="type-meta">gap-12 · gutter</div></div>
+      <div><div style="height:16px;background:#0A0A0A;margin-bottom:8px"></div><div class="type-meta">gap-16</div></div>
+      <div><div style="height:20px;background:#0A0A0A;margin-bottom:8px"></div><div class="type-meta">gap-20 · pad</div></div>
+      <div><div style="height:24px;background:#0A0A0A;margin-bottom:8px"></div><div class="type-meta">gap-24</div></div>
+    </div>
+  </div>
+
+  <!-- MOTION -->
+  <div class="section">
+    <div class="section-head">
+      <div class="section-eyebrow">Motion</div>
+      <div class="section-title">Ease + timings.</div>
+    </div>
+    <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+      <div class="card-demo">
+        <span class="label-muted">Standard ease</span>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;margin-top:8px;color:#0A0A0A">cubic-bezier(.22,1,.36,1)</div>
+        <div class="meta" style="margin-top:6px">Screen transitions, hovers, taps.</div>
+      </div>
+      <div class="card-demo">
+        <span class="label-muted">Spring ease</span>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;margin-top:8px">cubic-bezier(.34,1.56,.64,1)</div>
+        <div class="meta" style="margin-top:6px">Tab glyph, avatar pop, slide-knob rest.</div>
+      </div>
+      <div class="card-demo">
+        <span class="label-muted">Signature moment</span>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;margin-top:8px">280ms per contractor</div>
+        <div class="meta" style="margin-top:6px">Payroll dial: each avatar turns yellow one-by-one as its rail clears.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:64px;padding-top:32px;border-top:1px solid #E8E6DF;display:flex;justify-content:space-between;align-items:center">
+    <div class="meta">Design system · Lifted · living document · treat as a mockup, edit anything.</div>
+    <div class="label-muted">© Lifted 2026</div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

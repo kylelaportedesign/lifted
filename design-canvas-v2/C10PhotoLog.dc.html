@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#EFEAE0;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#EFEAE0;overflow:hidden;display:flex;flex-direction:column}
+    .content{flex:1;padding:56px 16px 96px;overflow:hidden}
+    .heading{font-weight:700;letter-spacing:-0.02em}
+    .label{font-weight:600;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:12px;color:#4A5651}
+    .row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}
+    .btn-back{border:0;background:transparent;padding:0;display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:#4A5651}
+    .tabs{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px}
+    .ptab{padding:6px 10px;border-radius:999px;background:#FBFAF6;border:1px solid #DDD6C7;font-size:11px;font-weight:600;color:#4A5651;flex-shrink:0}
+    .ptab.active{background:#1B3A2F;color:#EFEAE0;border-color:#1B3A2F}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+    .tile{position:relative;aspect-ratio:1;border-radius:8px;overflow:hidden;background:#4A5651}
+    .tile.render-pair::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#7A968C,#4A5651)}
+    .tile.p1{background:linear-gradient(135deg,#8A7562,#4A3D2E)}
+    .tile.p2{background:linear-gradient(135deg,#6B6660,#3D3D38)}
+    .tile.p3{background:linear-gradient(135deg,#5C6B4A,#2E3D24)}
+    .tile.p4{background:linear-gradient(135deg,#7A6C55,#3D3520)}
+    .tile.render{background:linear-gradient(180deg,#7A968C,#3D4A2E)}
+    .tile-badge{position:absolute;bottom:6px;left:6px;background:rgba(15,19,16,0.8);color:#EFEAE0;font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;letter-spacing:0.06em}
+    .paired-badge{position:absolute;top:6px;right:6px;background:#C86B3E;color:#FBFAF6;font-size:8px;font-weight:700;padding:2px 5px;border-radius:4px;letter-spacing:0.06em}
+    .fab{position:absolute;right:20px;bottom:92px;width:56px;height:56px;border-radius:50%;background:#C86B3E;color:#FBFAF6;border:0;box-shadow:0 6px 20px rgba(200,107,62,0.4);display:flex;align-items:center;justify-content:center}
+    .tabbar{position:absolute;bottom:0;left:0;right:0;height:76px;background:#1B3A2F;display:flex;justify-content:space-around;align-items:flex-start;padding:10px 8px 0}
+    .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#7A968C}
+    .tab.active{color:#EFEAE0}
+    .tab-dot{width:20px;height:2px;background:transparent;border-radius:2px;margin-top:2px}
+    .tab.active .tab-dot{background:#C86B3E}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="content">
+    <button class="btn-back" style="margin-bottom:8px"><svg width="10" height="12" viewBox="0 0 8 14"><path d="M7 1L1 7l6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>Cotter · patio</button>
+    <div class="row between" style="margin-bottom:12px">
+      <div><div class="heading" style="font-size:22px">Progress photos</div><div class="meta">48 photos · 3 paired to render</div></div>
+    </div>
+    <div class="tabs">
+      <div class="ptab">All 48</div>
+      <div class="ptab">Demo 6</div>
+      <div class="ptab">Excav 12</div>
+      <div class="ptab active">Concrete 18</div>
+      <div class="ptab">Kitchen 0</div>
+      <div class="ptab">Paired 3</div>
+    </div>
+
+    <div class="grid">
+      <div class="tile render"><div class="tile-badge">RENDER v3</div></div>
+      <div class="tile p3"><div class="paired-badge">Paired ↔</div><div class="tile-badge">Apr 20 · 11:42</div></div>
+      <div class="tile p1"><div class="tile-badge">Apr 22 · pour 2</div></div>
+      <div class="tile p2"><div class="tile-badge">Apr 22 · pour 2</div></div>
+      <div class="tile p4"><div class="tile-badge">Apr 21 · rebar</div></div>
+      <div class="tile p3"><div class="paired-badge">Paired ↔</div><div class="tile-badge">Apr 18 · pour 1</div></div>
+      <div class="tile p1"><div class="tile-badge">Apr 17 · forms</div></div>
+      <div class="tile p2"><div class="tile-badge">Apr 15 · base</div></div>
+    </div>
+  </div>
+  <button class="fab">
+    <svg width="24" height="24" viewBox="0 0 22 22"><path d="M3 8V6a2 2 0 012-2h3l2-2h4l2 2h3a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/><circle cx="11" cy="12" r="3" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+  </button>
+  <div class="tabbar"><div class="tab"><span>Today</span></div><div class="tab active"><span>Projects</span><div class="tab-dot"></div></div><div class="tab"><span>Money</span></div><div class="tab"><span>People</span></div></div>
+</div>
+</x-dc>
+</body>
+</html>

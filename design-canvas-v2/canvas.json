@@ -1,0 +1,50 @@
+{
+  "pages": [
+    { "id": "contractor", "name": "Contractor · dense" },
+    { "id": "client",     "name": "Client · editorial" },
+    { "id": "sub",        "name": "Sub · three screens" },
+    { "id": "system",     "name": "Design system" }
+  ],
+  "artboards": [
+    { "file": "Main.dc.html",          "page": "contractor", "x": 0,    "y": 0,    "w": 390, "h": 844, "title": "C1 · Today" },
+    { "file": "C2Projects.dc.html",    "page": "contractor", "x": 490,  "y": 0,    "w": 390, "h": 844, "title": "C2 · Projects" },
+    { "file": "C3Overview.dc.html",    "page": "contractor", "x": 980,  "y": 0,    "w": 390, "h": 844, "title": "C3 · Project overview" },
+    { "file": "C12Clients.dc.html",    "page": "contractor", "x": 1470, "y": 0,    "w": 390, "h": 844, "title": "C12 · Clients" },
+    { "file": "C14Settings.dc.html",   "page": "contractor", "x": 1960, "y": 0,    "w": 390, "h": 844, "title": "C14 · Settings" },
+
+    { "file": "C4Estimate.dc.html",    "page": "contractor", "x": 0,    "y": 970,  "w": 390, "h": 844, "title": "C4 · Estimate builder" },
+    { "file": "C5RenderStudio.dc.html","page": "contractor", "x": 490,  "y": 970,  "w": 390, "h": 844, "title": "C5 · Render studio ★" },
+    { "file": "C6Selections.dc.html",  "page": "contractor", "x": 980,  "y": 970,  "w": 390, "h": 844, "title": "C6 · Selections" },
+    { "file": "C9ChangeOrder.dc.html", "page": "contractor", "x": 1470, "y": 970,  "w": 390, "h": 844, "title": "C9 · Change order" },
+    { "file": "C13PriceBook.dc.html",  "page": "contractor", "x": 1960, "y": 970,  "w": 390, "h": 844, "title": "C13 · Price book" },
+
+    { "file": "C7Schedule.dc.html",    "page": "contractor", "x": 0,    "y": 1940, "w": 390, "h": 844, "title": "C7 · Schedule" },
+    { "file": "C8Crew.dc.html",        "page": "contractor", "x": 490,  "y": 1940, "w": 390, "h": 844, "title": "C8 · Crew & subs" },
+    { "file": "C10PhotoLog.dc.html",   "page": "contractor", "x": 980,  "y": 1940, "w": 390, "h": 844, "title": "C10 · Photo log" },
+    { "file": "C11Money.dc.html",      "page": "contractor", "x": 1470, "y": 1940, "w": 390, "h": 844, "title": "C11 · Money" },
+
+    { "file": "P1ClientHome.dc.html",  "page": "client", "x": 0,    "y": 0,    "w": 390, "h": 844, "title": "P1 · Home" },
+    { "file": "P2Explore.dc.html",     "page": "client", "x": 490,  "y": 0,    "w": 390, "h": 844, "title": "P2 · Explore ★" },
+    { "file": "P3Proposal.dc.html",    "page": "client", "x": 980,  "y": 0,    "w": 390, "h": 844, "title": "P3 · Proposal" },
+    { "file": "P4Decisions.dc.html",   "page": "client", "x": 1470, "y": 0,    "w": 390, "h": 844, "title": "P4 · Decisions" },
+    { "file": "P5Approvals.dc.html",   "page": "client", "x": 1960, "y": 0,    "w": 390, "h": 844, "title": "P5 · Approvals" },
+
+    { "file": "P6Timeline.dc.html",    "page": "client", "x": 0,    "y": 970,  "w": 390, "h": 844, "title": "P6 · Timeline" },
+    { "file": "P7Progress.dc.html",    "page": "client", "x": 490,  "y": 970,  "w": 390, "h": 844, "title": "P7 · Progress ★" },
+    { "file": "P8Payments.dc.html",    "page": "client", "x": 980,  "y": 970,  "w": 390, "h": 844, "title": "P8 · Payments" },
+    { "file": "P9Messages.dc.html",    "page": "client", "x": 1470, "y": 970,  "w": 390, "h": 844, "title": "P9 · Messages" },
+
+    { "file": "S1SubAssignment.dc.html","page": "sub", "x": 0,    "y": 0,    "w": 390, "h": 844, "title": "S1 · Assignment" },
+    { "file": "S2SubBid.dc.html",       "page": "sub", "x": 490,  "y": 0,    "w": 390, "h": 844, "title": "S2 · Submit bid" },
+    { "file": "S3SubWrap.dc.html",      "page": "sub", "x": 980,  "y": 0,    "w": 390, "h": 844, "title": "S3 · Wrap up" },
+
+    { "file": "DesignSystem.dc.html",   "page": "system", "x": 0, "y": 0, "w": 1400, "h": 3800, "title": "Foundry · design system", "expand": "fit" }
+  ],
+  "annotations": [
+    { "id": "contractor-note", "page": "contractor", "x": 0, "y": -180, "w": 1000, "text": "Contractor · dense utility interface\nRow 1: hub screens (Today · Projects · Overview · Clients · Settings). Row 2: the sell loop (Estimate builder → Render studio → Selections → Change orders → Price book). Row 3: the run loop (Schedule → Crew · Photo log · Money). ★ Render studio is the signature — hotspots link estimate line items to zones on the render." },
+    { "id": "client-note",     "page": "client",     "x": 0, "y": -180, "w": 1000, "text": "Client · spacious editorial portal\nRow 1: sell path (Home → Explore ★ → Proposal → Decisions → Approvals). Row 2: run path (Timeline → Progress ★ → Payments → Messages). No accounts, no installs — every link is a magic-link. ★ Explore is the signature — tap a zone on the render, scope and price rise. ★ Progress compares render to reality with the same before/after component." },
+    { "id": "sub-note",        "page": "sub",        "x": 0, "y": -180, "w": 900,  "text": "Sub · three screens · magic-link · never logs in\nAssignment → Submit bid → Wrap up. Three screens is the whole product for them." },
+    { "id": "system-note",     "page": "system",     "x": 0, "y": -180, "w": 900,  "text": "Foundry · design system\nBrand principles, palette, type, two density modes on one token set, hotspot signature spec, copy voice, naming decision. Working brand — swap it when ready." }
+  ],
+  "launch": { "view": "canvas", "page": "contractor" }
+}

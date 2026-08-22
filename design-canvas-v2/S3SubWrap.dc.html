@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><script src="./support.js"></script></head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    body{margin:0;font-family:'Inter',sans-serif;background:#F2EFE7;color:#0F1310;-webkit-font-smoothing:antialiased}
+    .screen{width:390px;height:844px;background:#F2EFE7;overflow:hidden;display:flex;flex-direction:column;padding:56px 20px 20px}
+    .heading{font-weight:700;letter-spacing:-0.02em}
+    .label{font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#4A5651}
+    .meta{font-weight:500;font-size:13px;color:#4A5651;line-height:1.5}
+    .tabular{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;letter-spacing:-0.02em}
+    .card{background:#FBFAF6;border-radius:12px;padding:16px;border:1px solid #E0DBCC;margin-bottom:12px}
+    .row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}
+    .brand{font-family:'Instrument Serif',serif;font-size:16px;color:#4A5651}
+    .input{background:#FBFAF6;border:1.5px solid #DDD6C7;border-radius:8px;padding:12px 14px;font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:700;color:#0F1310;width:100%;box-sizing:border-box}
+    .cta{display:block;width:100%;padding:16px;background:#1B3A2F;color:#FBFAF6;border:0;border-radius:10px;font-size:14px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;margin-top:12px}
+    .upload{background:#FBFAF6;border:1.5px dashed #B5B4B0;border-radius:12px;padding:20px;text-align:center;color:#4A5651}
+    .thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}
+    .thumb{aspect-ratio:1;border-radius:6px;background:linear-gradient(135deg,#8A7562,#4A3D2E)}
+  </style>
+</helmet>
+<div class="screen">
+  <div class="row between" style="margin-bottom:20px">
+    <div class="brand">Ridgeline</div>
+    <div class="label" style="font-size:9px">Rivera Concrete</div>
+  </div>
+
+  <div class="heading" style="font-size:22px;line-height:1.2">Wrap up · Cotter concrete</div>
+  <div class="meta" style="margin-top:8px">Add completion photos and submit your invoice.</div>
+
+  <div class="label" style="padding:16px 0 6px">Completion photos</div>
+  <div class="card" style="padding:14px">
+    <div class="upload">
+      <div style="font-size:24px">＋</div>
+      <div style="font-size:12px;margin-top:6px;font-weight:600">Add photos</div>
+    </div>
+    <div class="thumbs">
+      <div class="thumb"></div>
+      <div class="thumb" style="background:linear-gradient(135deg,#6B6660,#3D3D38)"></div>
+      <div class="thumb" style="background:linear-gradient(135deg,#5C6B4A,#2E3D24)"></div>
+      <div class="thumb" style="background:linear-gradient(135deg,#7A6C55,#3D3520)"></div>
+    </div>
+    <div class="meta" style="font-size:11px;margin-top:8px">4 photos uploaded · phase 3 complete</div>
+  </div>
+
+  <div class="label" style="padding:16px 0 6px">Invoice</div>
+  <div class="card">
+    <div class="row between" style="margin-bottom:10px">
+      <span style="font-size:13px;font-weight:600">Amount</span>
+      <span class="meta" style="font-size:11px">Agreed $48,200</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <span class="tabular" style="font-size:22px;color:#4A5651">$</span>
+      <input class="input" value="48,200"/>
+    </div>
+  </div>
+  <div class="card" style="padding:12px 14px">
+    <div class="row between"><span style="font-size:13px;font-weight:600">Payment method</span><span class="meta" style="font-size:12px">Direct deposit ••1284</span></div>
+  </div>
+  <div class="card" style="padding:12px 14px">
+    <div class="row between"><span style="font-size:13px;font-weight:600">Net terms</span><span class="meta" style="font-size:12px">Net 15 · pay by May 8</span></div>
+  </div>
+
+  <div style="flex:1"></div>
+
+  <button class="cta">Submit invoice</button>
+</div>
+</x-dc>
+</body>
+</html>
