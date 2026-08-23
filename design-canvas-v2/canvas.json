@@ -42,9 +42,45 @@
   ],
   "annotations": [
     { "id": "contractor-note", "page": "contractor", "x": 0, "y": -180, "w": 1000, "text": "Contractor · dense utility interface\nRow 1: hub screens (Today · Projects · Overview · Clients · Settings). Row 2: the sell loop (Estimate builder → Render studio → Selections → Change orders → Price book). Row 3: the run loop (Schedule → Crew · Photo log · Money). ★ Render studio is the signature — hotspots link estimate line items to zones on the render." },
-    { "id": "client-note",     "page": "client",     "x": 0, "y": -180, "w": 1000, "text": "Client · spacious editorial portal\nRow 1: sell path (Home → Explore ★ → Proposal → Decisions → Approvals). Row 2: run path (Timeline → Progress ★ → Payments → Messages). No accounts, no installs — every link is a magic-link. ★ Explore is the signature — tap a zone on the render, scope and price rise. ★ Progress compares render to reality with the same before/after component." },
-    { "id": "sub-note",        "page": "sub",        "x": 0, "y": -180, "w": 900,  "text": "Sub · three screens · magic-link · never logs in\nAssignment → Submit bid → Wrap up. Three screens is the whole product for them." },
-    { "id": "system-note",     "page": "system",     "x": 0, "y": -180, "w": 900,  "text": "Foundry · design system\nBrand principles, palette, type, two density modes on one token set, hotspot signature spec, copy voice, naming decision. Working brand — swap it when ready." }
+    { "id": "contractor-notes-howto", "page": "contractor", "x": 1470, "y": -180, "w": 380, "text": "How to leave feedback\nEach screen has its own note underneath — double-click to edit, drag the right edge to resize. Notes save with the canvas, so anyone with the link sees them.\n\nPress N to drop a fresh note anywhere." },
+
+    { "id": "note-C1",  "page": "contractor", "x": 0,    "y": 860,  "w": 380, "text": "C1 · Today\nFeedback:" },
+    { "id": "note-C2",  "page": "contractor", "x": 490,  "y": 860,  "w": 380, "text": "C2 · Projects\nFeedback:" },
+    { "id": "note-C3",  "page": "contractor", "x": 980,  "y": 860,  "w": 380, "text": "C3 · Project overview\nFeedback:" },
+    { "id": "note-C12", "page": "contractor", "x": 1470, "y": 860,  "w": 380, "text": "C12 · Clients\nFeedback:" },
+    { "id": "note-C14", "page": "contractor", "x": 1960, "y": 860,  "w": 380, "text": "C14 · Settings\nFeedback:" },
+
+    { "id": "note-C4",  "page": "contractor", "x": 0,    "y": 1830, "w": 380, "text": "C4 · Estimate builder\nFeedback:" },
+    { "id": "note-C5",  "page": "contractor", "x": 490,  "y": 1830, "w": 380, "text": "C5 · Render studio ★  (signature)\nFeedback:" },
+    { "id": "note-C6",  "page": "contractor", "x": 980,  "y": 1830, "w": 380, "text": "C6 · Selections\nFeedback:" },
+    { "id": "note-C9",  "page": "contractor", "x": 1470, "y": 1830, "w": 380, "text": "C9 · Change order\nFeedback:" },
+    { "id": "note-C13", "page": "contractor", "x": 1960, "y": 1830, "w": 380, "text": "C13 · Price book\nFeedback:" },
+
+    { "id": "note-C7",  "page": "contractor", "x": 0,    "y": 2800, "w": 380, "text": "C7 · Schedule\nFeedback:" },
+    { "id": "note-C8",  "page": "contractor", "x": 490,  "y": 2800, "w": 380, "text": "C8 · Crew & subs\nFeedback:" },
+    { "id": "note-C10", "page": "contractor", "x": 980,  "y": 2800, "w": 380, "text": "C10 · Photo log\nFeedback:" },
+    { "id": "note-C11", "page": "contractor", "x": 1470, "y": 2800, "w": 380, "text": "C11 · Money\nFeedback:" },
+
+    { "id": "client-note", "page": "client", "x": 0, "y": -180, "w": 1000, "text": "Client · spacious editorial portal\nRow 1: sell path (Home → Explore ★ → Proposal → Decisions → Approvals). Row 2: run path (Timeline → Progress ★ → Payments → Messages). No accounts, no installs — every link is a magic-link. ★ Explore is the signature — tap a zone on the render, scope and price rise. ★ Progress compares render to reality with the same before/after component." },
+    { "id": "client-notes-howto", "page": "client", "x": 1470, "y": -180, "w": 380, "text": "How to leave feedback\nEach screen has its own note underneath — double-click to edit, drag the right edge to resize.\n\nPress N to drop a fresh note anywhere." },
+
+    { "id": "note-P1", "page": "client", "x": 0,    "y": 860, "w": 380, "text": "P1 · Home\nFeedback:" },
+    { "id": "note-P2", "page": "client", "x": 490,  "y": 860, "w": 380, "text": "P2 · Explore ★  (signature)\nFeedback:" },
+    { "id": "note-P3", "page": "client", "x": 980,  "y": 860, "w": 380, "text": "P3 · Proposal\nFeedback:" },
+    { "id": "note-P4", "page": "client", "x": 1470, "y": 860, "w": 380, "text": "P4 · Decisions\nFeedback:" },
+    { "id": "note-P5", "page": "client", "x": 1960, "y": 860, "w": 380, "text": "P5 · Approvals\nFeedback:" },
+
+    { "id": "note-P6", "page": "client", "x": 0,    "y": 1830, "w": 380, "text": "P6 · Timeline\nFeedback:" },
+    { "id": "note-P7", "page": "client", "x": 490,  "y": 1830, "w": 380, "text": "P7 · Progress ★  (before/after slider)\nFeedback:" },
+    { "id": "note-P8", "page": "client", "x": 980,  "y": 1830, "w": 380, "text": "P8 · Payments\nFeedback:" },
+    { "id": "note-P9", "page": "client", "x": 1470, "y": 1830, "w": 380, "text": "P9 · Messages\nFeedback:" },
+
+    { "id": "sub-note", "page": "sub", "x": 0, "y": -180, "w": 900, "text": "Sub · three screens · magic-link · never logs in\nAssignment → Submit bid → Wrap up. Three screens is the whole product for them." },
+    { "id": "note-S1", "page": "sub", "x": 0,   "y": 860, "w": 380, "text": "S1 · Assignment\nFeedback:" },
+    { "id": "note-S2", "page": "sub", "x": 490, "y": 860, "w": 380, "text": "S2 · Submit bid\nFeedback:" },
+    { "id": "note-S3", "page": "sub", "x": 980, "y": 860, "w": 380, "text": "S3 · Wrap up\nFeedback:" },
+
+    { "id": "system-note", "page": "system", "x": 0, "y": -180, "w": 900, "text": "Foundry · design system\nBrand principles, palette, type, two density modes on one token set, hotspot signature spec, copy voice, naming decision. Working brand — swap it when ready.\n\nFeedback on the system as a whole → drop notes anywhere with N." }
   ],
   "launch": { "view": "canvas", "page": "contractor" }
 }
